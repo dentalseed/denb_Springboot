@@ -19,4 +19,5 @@ public class MypageToken  implements Serializable {
     private String jsonStr; // 공유테이블 JSON 문자열
     private LocalDateTime inDt; // 작성일
     private LocalDateTime endDt; // 유효 마감일
+    
 }

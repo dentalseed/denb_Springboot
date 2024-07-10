@@ -22,9 +22,12 @@ pipeline {
           steps {
               echo 'Copy Start "war파일 이동"'
               sh'''
-              scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 -r ./docker root@58.229.180.228:/home/dena/denb_boot
+
+              scp -i /home/denc/docker/docker-jenkins/master_jenkins_home/key/denb-v1.pem -P 38371 -r ./docker root@58.229.180.228:/home/dena/denb_boot
+
               cd ./${APP_API}/build/libs
-              scp -i /var/jenkins_home/key/denb-v1.pem -P 38371 ${APP_WAR_FILE} root@58.229.180.228:/home/dena/denb_boot/docker/denb_boot
+              scp -i /home/denc/docker/docker-jenkins/master_jenkins_home/key/denb-v1.pem -P 38371 ${APP_WAR_FILE} root@58.229.180.228:/home/dena/denb_boot/docker/denb_boot
+
               '''
               echo 'Copy End "war파일 이동"'
           }

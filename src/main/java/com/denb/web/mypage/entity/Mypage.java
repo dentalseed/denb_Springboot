@@ -1,6 +1,5 @@
 package com.denb.web.mypage.entity;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 import lombok.Getter;

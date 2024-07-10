@@ -1,6 +1,5 @@
 package com.denb.web.mypage.entity;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -12,6 +11,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class MypageToken  implements Serializable {
+    
     private static final long serialVersionUID = 6494678977089006639L;
     private int idx; // 고유값
     private String token; // 토큰키

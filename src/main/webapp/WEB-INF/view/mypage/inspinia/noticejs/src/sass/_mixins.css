@@ -1,0 +1,6 @@
+/**
+* Fetch nested keys
+* @param {Map} $map - Map
+* @param {Arglist} $keys - Keys to fetch
+* @return {*}
+*/

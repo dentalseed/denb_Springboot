@@ -1,0 +1,247 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-04 20:10:20
+ * @LastEditTime: 2022-04-04 20:10:21
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: \denb\plugin\KTCID\api_sms.html
+ * 
+-->
+<HTML>
+<HEAD><TITLE> OPEN_API ��������</TITLE>
+<SCRIPT type="text/javascript" language="JavaScript" src="api_js.js"></script>
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventLogin(nResult)" LANGUAGE="Jscript">
+/**
+	�α��� ���� �̺�Ʈ
+**/ 
+	if(nResult==200)
+	{
+		alert( "[Event] Login ����" );		
+	}
+	else
+	{
+		alert( "[Event] Login ����" );
+	}
+ 
+</SCRIPT>
+
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventConnect(nResult)" LANGUAGE="Jscript">
+/**
+	Connect �̺�Ʈ
+**/ 
+	var oDiv = document.all("DivConnect");
+	if(nResult==1){
+		oDiv.innerText="����";
+	}else{
+		oDiv.innerText="����";
+	}
+</SCRIPT>
+
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventChangePasswd( sPasswd )" LANGUAGE="Jscript">
+/**
+ �н����� ���� ���� �̺�Ʈ
+**/
+alert( "�н����� ���� : " + sPasswd );
+</SCRIPT>
+
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventSMS( sCaller, sCallee, sMessage, sSlSeqno)" LANGUAGE="Jscript">
+
+/**
+	���� ���� ���� �̺�Ʈ
+
+**/
+		alert(	"�߽�:"					+	sCaller		+" "+
+				", ����:"				+	sCallee		+" "+
+				", �޼���:"				+	sMessage	+" "+
+				", ���ڳ��� �Ϸù�ȣ:"	+	sSlSeqno
+				);
+</SCRIPT>
+
+
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventSyncAddressData( nMode, sAdType, sAdParentSeqno, sAdSeqno, sAdName, sAdMNumber, sAdONumber, sAdHNumber, sAdFNumber, sAdCompany, sAdTeam, sAdTitle, sAdBusiness, sAdZipCode, sAdAddress, sAdEmail, sAdMemo, sAdBirthDay, sAdBirthType, sNgName, sAdMetChance, sAdKeyman, sAdFavorite)" LANGUAGE="Jscript">
+
+/**
+ �ּҷ� ����� ���� �̺�Ʈ
+
+**/
+  var EventSyncAddressData = "";
+  EventSyncAddressData = 
+    "���:"     + nMode   +" "+
+    
+    ", �ּ�:"    + sAdAddress  +" "+
+    ", �������:"   + sAdBirthDay  +" "+
+    ", ����0,���1:"  + sAdBirthType +" "+
+    ", ������:"   + sAdBusiness  +" "+
+    ", ȸ���̸�:"   + sAdCompany  +" "+
+    ", �̸����ּ�:"   + sAdEmail  +" "+
+    ", ���ɻ�:"    + sAdFavorite  +"\n"+
+    ", �ѽ���ȣ:"   + sAdFNumber  +" "+
+    ", ����ȭ��ȣ:"   + sAdHNumber  +" "+
+    ", ��õ��:"    + sAdKeyman  +" "+
+    ", �ι��޸�:"   + sAdMemo   +" "+
+    ", ������Ȳ:"   + sAdMetChance +" "+
+    ", �ڵ�����ȣ:"   + sAdMNumber  +" "+
+    ", �̸�:"    + sAdName   +" "+
+    ", ȸ����ȭ��ȣ:"  + sAdONumber  +"\n"+
+    ", �����׷��Ϸù�ȣ:" + sAdParentSeqno +" "+
+    ", �ּҷ��Ϸù�ȣ:"  + sAdSeqno  +" "+
+    ", �μ�:"    + sAdTeam   +" "+
+    ", ��å:"    + sAdTitle  +" "+
+    ", �׷�Ÿ��:"   + sAdType   +" "+
+    ", ������ȣ:"   + sAdZipCode  +" "+
+    ", �θ�:"    + sNgName   +"\n\n";
+
+document.getElementById("EventSyncAddressData").value =EventSyncAddressData;
+
+
+</SCRIPT>
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventAddinCall( nSelectType, sAddinType, nCount)" LANGUAGE="Jscript">
+
+/**
+	������ �� �̺�Ʈ
+
+**/
+	var EventAddinCall = "";
+
+		EventAddinCall =	"�����Ѹ޴�Ÿ��:"		+	nMode			+" "+
+				", ��������α׷�:"		+	sAgName			+" "+
+				", ��ȭ��ȣ ��:"		+	sAgParentSeqno	+"\n";
+	
+		document.getElementById("EventAddinCall").value =EventAddinCall;
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<OBJECT ID="KTOpenAPIX" CLASSID="CLSID:16AB1B2A-A22E-4FAC-92CB-84102DF5CE3D"></OBJECT>
+	<table border="1" width ="1450px">
+		<tr>
+			<td>����Ȯ��</td>
+		</tr>
+		<tr>
+			<td><div id="DivConnect">&nbsp;</div></td>  
+		</tr>
+		<tr>
+			<td>
+				<table border="1" style="float:left"  >
+					<tr>
+						<td >�α��� </td>
+						<td><input type ="button" value ="�����α׾ƿ�" onclick ="LoginKickOut()"></td>
+					</tr>
+					<tr>
+						<td width="70">����</td>
+						<td>
+							<select Name="server" >
+							<option value="0" >���߿�</option>
+							<option value="1">���</option>
+							</select>
+							<input type="button" value="ȸ��û��" onclick="LineJoin()">
+						</td>
+					</tr>
+					<tr>
+						<td>����Ű</td>
+						<td> <Input Type = "Text" Name = "authkey"value = "����Ű �Է�"  onclick = "keyclear()"></td>
+					</tr>
+					<tr>
+						<td>���̵�</td>
+						<td><Input Type = "Text" Name = "loginID"value = "���̵� �Է�" onclick = "idclear()"></td>
+					</tr>
+					<tr>
+						<td>��й�ȣ</td>
+						<td><Input Type = "password" Name = "loginPWD"value = "��й�ȣ" onclick = "passclear()"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+						<input type="button" value='�α���' onClick="Login()"> 
+						<input type="button" value='�α׾ƿ�' onClick="Logout()">
+						<input type="button" value='����' onClick="HelpEX()">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+						<input type="button" value='ȸ������' onClick="UserJoinEX()">
+						<input type="button" value='��й�ȣ ã��' onClick="FindPasswdEX()">
+						</td>
+					</tr>
+				</table>
+				<table border ="1px" style="float:left">
+					<tr>
+						<td>��ȭ��ȣ ����</td>
+					</tr>
+					<tr>
+						<td><input type = "text" name ="sRecvPhone" ></td>
+					</tr>
+					<tr>
+						<td>
+							<input type = "button" value="��ȭ��ȣ ����" onclick="SetRecvPhone()">
+							<input type = "button" value="��������" onclick="GetRecvPhone()">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type = "button" value="��ȭ��ȣ ����" onclick="RemoveRecvPhone()">
+							<input type = "button" value="��ü����" onclick="RemoveAllRecvPhone()">
+						</td>
+					</tr>
+					<tr>
+						<td><textarea id="RecvPhonelist" cols ="30" rows = "5"></textarea></td>
+					</tr>	
+				</table>
+				<table border = "1px">
+					<tr>
+						<td>�ּҷ� ����� ����</td>
+					</tr>
+					<tr>
+						<td><textarea id="EventSyncAddressData" style="width:900px" rows = "4"></textarea></td>
+					</tr>
+					<tr>
+						<td>������ ��</td>
+					</tr>
+					<tr>
+						<td><textarea id="EventSyncAddressData" style="width:900px" rows = "4"></textarea></td>
+					</tr>
+				</table>
+			
+			</td>
+		</tr>
+		<tr>
+			<td>
+
+				<table border="1px">
+					<tr>
+						<td>���� ����</td>
+					</tr>
+					<tr>
+						<td>
+							�߽Ź�ȣ : <input type ="text" name ="MsCaller" value  = "025418828" >
+							����ð� : <input type ="text" name ="sSendDate">
+							���ڸ޼��� : <input type ="text" name ="sMessage" value = "TEST"><br>
+							ȸ�Ź�ȣ : <input type ="text" name ="sDisplay" value  = "025418828"> 
+							�׷��ȣ : <input type ="text" name ="sSmsGroupSeqNo">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type ="button" value="��������" onclick = "SendSMS()">
+							<input type ="button" value="���๮��" onclick = "SendReserveSMS()">
+							<input type ="button" value="���๮�ڼ���" onclick = "EditReserveSMS()">
+							<input type ="button" value="���๮�����" onclick = "CancelReserveSMS()">						
+						</td>
+					</tr>
+					<tr>
+						<td><textarea id="SendReserveSMS" cols ="129" rows= "10"></textarea></td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+	</table>
+</BODY>
+</HTML>
+

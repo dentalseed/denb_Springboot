@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.denb.web.mypage.dao.MypageDao">			
+<!-- 	<select id="selectMemberById" parameterType="int" resultType="com.denb.web.mypage.dto.MypageDto">
+		SELECT * FROM testTable
+		WHERE idx=#{idx}
+	</select> -->
+	    
+	<select id="selectUserByToken" parameterType="String" resultType="com.denb.web.mypage.dto.MypageTokenDto">
+		SELECT * FROM url_token
+		
+		WHERE token=#{token}
+	</select>
+</mapper>

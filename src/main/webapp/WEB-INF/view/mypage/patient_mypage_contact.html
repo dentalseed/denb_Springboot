@@ -1,0 +1,4679 @@
+
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Codedthemes" />
+    <meta name="description" content="ARS센터">
+    <title>ARS센터</title>
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- fontawesome icon -->
+    <!-- plugins css -->
+    <link href="app/demos/main/css/style.css" rel="stylesheet">
+    <link href="inspinia/css/bootstrap.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/bootstrapSocial/bootstrap-social.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/datapicker/datepicker3.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/select2/select2.min.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/select2/select2-bootstrap4.min.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/fullcalendar/fullcalendar.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/fullcalendar/fullcalendar.print.css?v=1715955169" rel="stylesheet" media="print">
+    <link href="inspinia/css/plugins/slick/slick-theme.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/noticejs/css/animate.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/noticejs/dist/noticejs.css?v=1715955169" rel="stylesheet" />
+    <link href="inspinia/css/plugins/iCheck/custom.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/summernote/summernote-bs4.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/plugins/sweetalert/sweetalert.css?v=1715955169" rel="stylesheet">
+    <link href="plugin/fullcalendar/lib/main.css?v=1715955169" rel="stylesheet">
+    <link href="plugin/jQuerySwwetAlert/dist/sweetalert2.css?v=1715955169" rel="stylesheet">
+    <link href="plugin/jquerygrowl-notification/colored-theme.min.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/animate.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/css/style.css?v=1715955169" rel="stylesheet">
+
+    <!-- user css -->
+    <link href="css/common.css?v=1715955169" rel="stylesheet">
+    <link href="css/denb.css?v=1715955169" rel="stylesheet">
+    <link href="assets/fonts/fontawesome/css/fontawesome-all.min.css?v=1715955169" rel="stylesheet">
+    <link href="assets/fonts/simple-line-icons/css/simple-line-icons.css?v=1715955169" rel="stylesheet">
+    <link href="inspinia/font-awesome/css/font-awesome.css?v=1715955169" rel="stylesheet">
+
+    <!-- js -->
+    <!-- 브라우저 판단 -->
+    <script src="plugin/anti-selfish-browser/Browser.js"></script>
+    <script src="plugin/anti-selfish-browser/anti-selfish-browser.js"></script>
+
+    <!-- jquery -->
+    <script src="inspinia/js/jquery-3.1.1.min.js?v=1715955169"></script>
+    <script src="js/common.js?v=1715955169"></script>
+    <script src="inspinia/js/plugins/sweetalert/sweetalert.min.js?v=1715955169"></script>
+
+    <!-- sound -->
+    <audio id="audio" src="img/notify.wav"></audio>
+</head>
+    <header class="header header--page header--fixed bg-white border-bottom">
+        <div class="header__inner">
+            <div class="header__icon header__icon--menu open-panel">
+                <a type="button" href="patient_mypage3.html" class="btn btn-success hei-30 w-20"><i class="fa fa-chevron-left"></i> 마이비서</a>
+                <!-- <a class="p-lg minw-50 text-dark" data-toggle="" href="patient_mypage.php" aria-expanded="false">
+                    <i class="fa fa-chevron-left"></i>
+                </a> -->
+            </div>
+            <div class="h5 no-margins text-dark">후기</div>
+            <div class="header__icon open-panel" data-panel="right"></div>
+        </div>
+    </header>
+<body class="  top-navigation" ><section class="container pt-5 loginColumns ">
+    <div class="widgetxxx">
+        <center class="m-b">
+            <div class="p-xs">
+                <!--<h1><strong class="font-bold">덴비치과 온라인 문의</strong></h1>-->
+                <h1><strong class="font-bold">고객님의 후기를 남겨주세요</h1>
+
+                <h3>
+                    <label class="text-info text-center">
+                        <i class="fa fa-exclamation-circle fa-lg mr-xs"></i>
+                        요청사항을 남겨주시면 치과에서 신속하게 연락을 드리겠습니다.
+                    </label>
+                </h3>
+            </div>
+        </center>
+
+        <form name="writeFormModal" id="writeFormModal" action="javascript:fsubmitModal()" onsubmit="return form_up_modal(this);" method="post" enctype="MULTIPART/FORM-DATA" data-validate="parsley" data-url="">
+            <input type="hidden" name="token" id="token" title="token" placeholder="token" readonly value="" >            <input type="hidden" name="dentist_idx" id="dentist_idx" title="dentist_idx" placeholder="dentist_idx" readonly value="1" >            <input type="hidden" name="patient_idx" id="patient_idx" title="patient_idx" placeholder="patient_idx" readonly value="" >            <input type="hidden" name="field" id="field" title="field" placeholder="field" readonly value="requests" >            <input type="hidden" name="is_auto" id="is_auto" title="is_auto" placeholder="is_auto" readonly value="Y" >            <input type="hidden" name="f" id="f" title="f" placeholder="f" readonly value="1" >            <div class='hr-text hr-text-'><i class='fa fa-'></i><span>고객정보</span></div><div class="row "><div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-  "><div class='form-group row ' id='' data-toggle=''><label class='col-xl-4 col-lg-6 col-md-12 col-sm-12  col-form-label '><i class="fa fa-asterisk text-danger small" style="font-size:8px"></i> 고객명 </label><div class='col-xl-8 col-lg-6 col-md-12 col-sm-12  '> <input type="text" name="patient_nm" id="patient_nm" value="" class="form-control " title=""  data-required="true"   placeholder=' 입력'      ></div></div><div class="line line-sm b-t pull-in"></div></div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-  "><div class='form-group row ' id='' data-toggle=''><label class='col-xl-4 col-lg-6 col-md-12 col-sm-12  col-form-label '><i class="fa fa-asterisk text-danger small" style="font-size:8px"></i> 연락번호 </label><div class='col-xl-8 col-lg-6 col-md-12 col-sm-12  '> <input type="text" name="tel" id="tel" value="" class="form-control phone" title=""  data-required="true"   placeholder=' 입력'      ></div></div><div class="line line-sm b-t pull-in"></div></div>
+</div><div class='hr-text hr-text-'><i class='fa fa-'></i><span>후기분류</span></div><div class='form-group row ' id='' data-toggle=''><div class='col-xl-12 col-lg-12 col-md-12 col-sm-12  '> <div class="tabs-container"><div class="btn-group-toggle nav float-e-margins" data-toggle="buttons"><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate0_tab'><span class="text-active"><i class="fa fa-check"></i> </span>시술후기<input type="radio" id="cate0" name="cate" value="예약신청" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate1_tab'><span class="text-active"><i class="fa fa-check"></i> </span>상담원연결요청<input type="radio" id="cate1" name="cate" value="상담원연결요청" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate2_tab'><span class="text-active"><i class="fa fa-check"></i> </span>내원후기<input type="radio" id="cate2" name="cate" value="내원후기" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate3_tab'><span class="text-active"><i class="fa fa-check"></i> </span>치과후기<input type="radio" id="cate3" name="cate" value="치과후기" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate4_tab'><span class="text-active"><i class="fa fa-check"></i> </span>기타후기<input type="radio" id="cate4" name="cate" value="기타후기" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate5_tab'><span class="text-active"><i class="fa fa-check"></i> </span>예약후기<input type="radio" id="cate5" name="cate" value="예약후기" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate6_tab'><span class="text-active"><i class="fa fa-check"></i> </span>예약변경<input type="radio" id="cate6" name="cate" value="예약변경" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate7_tab'><span class="text-active"><i class="fa fa-check"></i> </span>비용상담후기<input type="radio" id="cate7" name="cate" value="비용상담후기" data-required="true"  ></span><span class='btn im-btn-success btn-rounded btn-outline   ' data-toggle='tab' href='#cate8_tab'><span class="text-active"><i class="fa fa-check"></i> </span>직원후기<input type="radio" id="cate8" name="cate" value="직원후기" data-required="true"  ></span></div><div class="tab-content"><div class="tab-pane  " id="cate0_tab"></div ><div class="tab-pane  " id="cate1_tab"></div ><div class="tab-pane  " id="cate2_tab"></div ><div class="tab-pane  " id="cate3_tab"><div class='hr-text hr-text-'><i class='fa fa-'></i><span>가입하신 보험사를 선택하세요</span></div><select name="insurance_company" id="insurance_company" placeholder="" class="form-control   "    data-toggle='checkstr_new' data-target='content'><option value='' class='text-light'>=보험사 선택=</option><option value="AIA치아보험"  class=''>AIA치아보험</option>
+<option value="한화손해"  class=''>한화손해</option>
+<option value="DB손해보험"  class=''>DB손해보험</option>
+<option value="ING(오렌지)"  class=''>ING(오렌지)</option>
+<option value="KB손해보험"  class=''>KB손해보험</option>
+<option value="KB손해보험"  class=''>KB손해보험</option>
+<option value="NH생명"  class=''>NH생명</option>
+<option value="라이나생명"  class=''>라이나생명</option>
+<option value="교보생명"  class=''>교보생명</option>
+<option value="동양생명"  class=''>동양생명</option>
+<option value="롯데손해보험"  class=''>롯데손해보험</option>
+<option value="매리츠화재"  class=''>매리츠화재</option>
+<option value="미래에셋"  class=''>미래에셋</option>
+<option value="삼성생명"  class=''>삼성생명</option>
+<option value="한화생명"  class=''>한화생명</option>
+<option value="삼성화재"  class=''>삼성화재</option>
+<option value="현대해상"  class=''>현대해상</option>
+<option value="우체국+"  class=''>우체국+</option>
+<option value="신한생명"  class=''>신한생명</option>
+<option value="에이스"  class=''>에이스</option>
+<option value="흥국생명"  class=''>흥국생명</option>
+<select><div class='hr-text hr-text-'><i class='fa fa-'></i><span>요청서류 유형 선택</span></div><label class='pointer col-form-label m-r ' ><input name='insurance_file[0]' id='insurance_file0' type='checkbox' value='엑스레이(x-ray)'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text0'> 엑스레이(x-ray)</label><label class='pointer col-form-label m-r ' ><input name='insurance_file[1]' id='insurance_file1' type='checkbox' value='소견서'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text1'> 소견서</label><label class='pointer col-form-label m-r ' ><input name='insurance_file[2]' id='insurance_file2' type='checkbox' value='진단서'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text2'> 진단서</label><label class='pointer col-form-label m-r ' ><input name='insurance_file[3]' id='insurance_file3' type='checkbox' value='진료기록지(차트)'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text3'> 진료기록지(차트)</label><label class='pointer col-form-label m-r ' ><input name='insurance_file[4]' id='insurance_file4' type='checkbox' value='보험사 발급 치료확인서'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text4'> 보험사 발급 치료확인서</label><label class='pointer col-form-label m-r ' ><input name='insurance_file[5]' id='insurance_file5' type='checkbox' value='진료비 영수증'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text5'> 진료비 영수증</label><label class='pointer col-form-label m-r ' ><input name='insurance_file[6]' id='insurance_file6' type='checkbox' value='진료비 세부내역서'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text6'> 진료비 세부내역서</label><label class='pointer col-form-label m-r ' ><input name='insurance_file[7]' id='insurance_file7' type='checkbox' value='수술 확인서'   data-toggle='checkstr_new' data-target='content' class=m-r-xs data-toggle="readonly" data-target='#insurance_file_text7'> 수술 확인서</label></div ><div class="tab-pane  " id="cate4_tab"></div ><div class="tab-pane  " id="cate5_tab"></div ><div class="tab-pane  " id="cate6_tab"></div ><div class="tab-pane  " id="cate7_tab"><div class='hr-text hr-text-'><i class='fa fa-'></i><span>혹시 아픈 곳이 있으세요?</span></div><label class='col-form-label pointer' ><input type="radio" id="memo_option0" name="memo_option" class="" value="Y"    data-toggle="readonly" data-target='#memo_option_text0'><span class='m-l-xs m-r '>예</span>
+</label><label class='col-form-label pointer' ><input type="radio" id="memo_option1" name="memo_option" class="" value="N"  checked='checked'  data-toggle="readonly" data-target='#memo_option_text1'><span class='m-l-xs m-r '>아니요</span>
+</label></div ><div class="tab-pane  " id="cate8_tab"></div ></div></div></div></div><div class="line line-sm b-t pull-in"></div><BR><div class='hr-text hr-text- text-center m-t-lg'><i class='fa fa-'></i><span>후기 내용을 작성해주세요 .<br> 병원에 바로 전달 됩니다!</span></div><div class='form-group row ' id='' data-toggle=''><div class='col-xl-12 col-lg-12 col-md-12 col-sm-12  '><div class='help-block text-info'><label class='text-light text-center'><i class='fa fa-exclamation-circle fa-lg mr-xs'></i> 문의 내용은 필수 입력 입니다.</label></div> <textarea name="content" id="content" class="form-control col-lg-12 border-info" rows="6" placeholder="문의 내용 입력 하세요." data-required="true"  ></textarea></div></div><div class="line line-sm b-t pull-in"></div>            <div class="row m-t">
+            <label class="col-form-label col-auto"><input type="checkbox" name="agree_yn" id="agree_yn" value="Y" checked> 개인정보 처리방침 안내 동의 <a href = "javascript:" target = '' class='  font-bold text_underline' data-toggle="fnModalForm" data-type="agreement_dentist">개인정보 처리방침</a></label>
+        </div>
+            <center class="m-t">
+                <button   type='submit' name='act_button' title='등록하기' value="등록하기"  onclick="document.pressed=this.value"  class="btn btn-btn btn-success hei-50 m-b btn-block " accesskey="s"  ><i class='fa fa-check'></i> 등록하기</button>            </center>
+        </form>
+    </div>
+</section>
+</div></div>
+<!-- end warrper -->
+<!-- 알림팝업창 -->
+<div class="modal fadexxx bd-example-modal-xl" id="modalPopupXl" tabindex="-5" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-hiddenevent="" data-trigger="">
+    <div class="modal-dialog modal-xl" id="modalContentXl">
+    </div>
+</div>
+<div class="modal fadexxx bd-example-modal-lg" id="modalPopupLg" tabindex="-4" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-hiddenevent="" data-trigger="">
+    <div class="modal-dialog modal-lg" id="modalContentLg">
+    </div>
+</div>
+<div class="modal fadexxx bd-example-modal-sm" id="modalPopupSm" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-hiddenevent="" data-trigger="">
+    <div class="modal-dialog" id="modalContentSm">
+    </div>
+</div>
+<div class="modal fadexxx bd-example-modal" id="modalPopup" tabindex="-3" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-hiddenevent="" data-trigger="">
+    <div class="modal-dialog" id="modalContent">
+    </div>
+</div>
+    <div id="small-chat">
+        <span class="badge badge-white float-right rounded-pill" id="pateint_memo_log_cnt" title="">0</span>
+        <a class="open-small-chat" href="">
+            <i class="fa fa-comments fa-2x"></i>
+        </a>
+    </div>
+    <div class="small-chat-box">
+        <div class="heading h6" draggable="true">
+            <span class="chat-date float-right">
+                <span class="pointer h6 open-small-chat-x">× 닫기</span>
+            </span>
+            환자메모 2024-06-12        </div>
+
+        <div class="content" id="widget_patient_memo_chatting_list_small">
+        </div>
+        <div class="form-chat">
+            <label class='text-muted m-t-sm'><i class='fa fa-exclamation-circle fa-lg mr-xs'></i> 최근 50개 메모만 노출 됩니다.</label>            <div class="input-group input-group-sm">
+                <input type="text" id="chat-memo-search" class="form-control m-b" placeholder="환자명, 차트번로 빠른검색">
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#chat-memo-search").on("keyup", function() {
+            var g = $(this).val().toLowerCase();
+            $(".chat-message-item").each(function() {
+                var t = $(this).attr('data-filter');
+                // console.log(t);
+                if (t) {
+                    var s = t.toLowerCase();
+                }
+                if (s) {
+                    var n = s.indexOf(g);
+                    if (n !== -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                }
+            });
+        });
+    </script>
+
+<!-- denb -->
+<script src="js/denb-dentist-common.js?v=1715955169"></script>
+<!-- common -->
+<script src="inspinia/js/popper.min.js?v=1715955169"></script>
+<script src="inspinia/js/bootstrap.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/metisMenu/jquery.metisMenu.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/datapicker/bootstrap-datepicker.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/datapicker/bootstrap-datepicker.kr.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/select2/js/select2.full.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/summernote/summernote-bs4.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/summernote/lang/summernote-ko-KR.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/typehead/bootstrap3-typeahead.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/blueimp/jquery.blueimp-gallery.min.js?v=1715955169"></script>
+
+<!-- Clipboard -->
+<script src="inspinia/js/plugins/clipboard/clipboard.min.js?v=1715955169"></script>
+<!-- BS custom file -->
+<script src="inspinia/js/plugins/bs-custom-file/bs-custom-file-input.min.js?v=1715955169"></script>
+<!-- switchery -->
+<script src="inspinia/js/plugins/switchery/switchery.js?v=1715955169"></script>
+
+<!-- parsley Js -->
+<script src="js/parsley/parsley.extend.js?v=1715955169"></script>
+<script src="js/parsley/parsley.min.js?v=1715955169"></script>
+
+<script src="inspinia/js/inspinia.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/pace/pace.min.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/jqueryMask/jquery.mask.min.js?v=1715955169"></script>
+<!-- chart Js -->
+<script src="inspinia/js/plugins/peity/jquery.peity.min.js?v=1715955169"></script>
+<script src="inspinia/js/demo/peity-demo.js?v=1715955169"></script>
+
+<!-- Js Plugin-->
+<script src="plugin/jquerygrowl-notification/growl-notification.min.js?v=1715955169"></script>
+<script src="plugin/spectrum-2.0.8/dist/spectrum.min.js?v=1715955169"></script>
+
+<!-- Input mask Js -->
+<script src="assets/plugins/inputmask/js/inputmask.min.js?v=1715955169"></script>
+<script src="assets/plugins/inputmask/js/jquery.inputmask.min.js?v=1715955169"></script>
+<script src="assets/plugins/inputmask/js/autoNumeric.js?v=1715955169"></script>
+<script src="assets/js/pages/form-masking-custom.js?v=1715955169"></script>
+<script src="assets/js/pages/form-select-custom.js?v=1715955169"></script>
+<script src="inspinia/js/plugins/sweetalert/sweetalert.min.js?v=1715955169"></script>
+<script src="../assets/js/pages/form-select-custom.js"></script>
+
+<script src="inspinia/noticejs/dist/notice.js?v=1715955169"></script>
+<script src="js/im.js?v=1715955169"></script>
+<script src="js/app.js?v=1715955169"></script>
+
+<script>
+    $(document).ready(function() {
+        try {
+            swal.close();
+            denbMonitor();
+            // fnUserMassegeLatest(); // 알림 로딩
+            // fnUserMassegeDel('C'); // 확이 혹은 읽지 않은 메세지
+        } catch (error) {
+            console.error("An error occurred:", error.message);
+        }
+    });
+
+    // Open close small chat
+    $('.open-small-chat, .open-small-chat-x').on('click', function(e) {
+        $('#pateint_memo_log_cnt').html(0);
+        $('#pateint_memo_log_cnt').removeClass("badge-danger");
+        $('#pateint_memo_log_cnt').addClass("badge-white");
+        fnLoadWidget("widget_patient_memo_chatting_list_small");
+        e.preventDefault();
+        $(this).children().toggleClass('fa-comments').toggleClass('fa-times');
+        $('.small-chat-box').toggleClass('active');
+    });
+
+    $('#modalPopup, #modalPopupSm, #modalPopupLg, #modalPopupXl').on('hidden.bs.modal', function() {
+        var hiddenevent = $(this).find('div').attr('data-hiddenevent');
+        var trigger = $(this).find('div').attr('data-trigger');
+        hiddenevent && eval(hiddenevent);
+        trigger && $(trigger).trigger("click");
+        // console.log("trigger:" + trigger);
+        $(this).find('.modal-dialog').html('');
+        log_modal_reset();
+        document.body.style.overflow = "";
+        $('.sp-container').remove();
+        $.each($("div.modal"), function(i, e) {
+            if ($(this).hasClass('show')) {
+                $(document.body).addClass('modal-open');
+            }
+        });
+        alert_popup_auto = "n";
+        // modal close denbMonitor execute;
+        rightSidebarToggleReload();
+    }).on('show.bs.modal', function() {
+        var modal = $(this);
+        $('.popover').remove();
+        var renameInput = modal.find('#or_search_text');
+        renameInput.focus();
+        alert_popup_auto = "y";
+    }).on('shown.bs.modal', function() {
+        setTimeout(function() {
+            swal.close()
+        }, 500); // 1초후 로딩화면닫기
+    })
+
+    function modal_close() {
+        $('#modalPopupXl, #modalPopupLg, #modalPopup, #modalPopupSm').modal('hide');
+        $('#modalContentXl, #modalContentLg, #modalContent, #modalContentSm').html('');
+        log_modal_reset();
+    }
+    var data_exclude = ["parsleyField"]; // 배열 함수에서 배제할 컬럼
+    function fnCommonPatientSearch(reset) {
+        var arg = arguments[0];
+        // console.log(arg);
+        if (arg == 'reset') {
+            var params = "";
+        } else {
+            var params = $("#searchformModal").serialize();
+            arg && (params = Object.assign(arg, params));
+            // console.log(params);
+        }
+        // console.log(params);
+        $.ajax({
+            url: "../include/patient_search_list.php",
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+                $('#searchformModal #search_text').focus();
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    function fnSearchModal(obj, type) {
+        params = $("#" + obj).serialize()
+        switch (type) {
+            case 'reserve_list':
+                var url = "include/patient_reserve_list.php";
+                break;
+        }
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+    //환자선택
+    function fnCommonPatientSelect(idx, patient_nm, gender, tel, birth_dt, receipt_cnt) {
+        $('#patient_idx').val(idx);
+        $('#patient_nm').val(patient_nm);
+        $('#tel').val(tel);
+        $('#birth_dt').val(birth_dt);
+
+        if (gender == 'M') {
+            $("#gender1").prop('checked', true);
+            $("#gender2").prop('checked', false);
+        } else if (gender == 'F') {
+            $("#gender1").prop('checked', false);
+            $("#gender2").prop('checked', true);
+        }
+
+        $('#patient_check').val('Y');
+        $("#patient_nm").attr("readonly", true);
+        $("#tel").attr("readonly", true);
+        $("#birth_dt").attr("readonly", true);
+
+        if (receipt_cnt == '0') {
+            $('#receipt_button').css("display", "block");
+        } else {
+            $('#receipt_button').css("display", "none");
+        }
+        $('#modalPopup').modal('hide');
+    }
+    //접수
+    function fnReceipt(patient_idx) {
+        var params = {
+            patient_idx: patient_idx
+        };
+
+        if (!confirm('접수 하시겠습니까?'))
+            return false;
+
+        $.ajax({
+            url: "../patient/receipt.php",
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                if (data) {
+                    alert("접수 되었습니다.")
+                    if ($('#receipt_button' + patient_idx)) {
+                        $('#receipt_button' + patient_idx).text("접수완료").attr("disabled", true).addClass('disabled').toggleClass("btn-info");
+                    }
+                    location.reload();
+                }
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+
+    //카카오톡 발송
+    function fnKakaoSend(idx, name, tel, type) {
+        var params = {
+            patient_idx: idx,
+            type: type
+        };
+
+        if (type == '접수') {
+            tmplId = 'order01';
+
+            msg = "[]";
+            msg += "안녕하세요. " + name + "님!";
+            msg += "에 접수 완료 되였습니다.";
+            msg += "잠시만 기다려 주세요";
+            msg += "감사합니다.";
+        }
+
+        var request_url = "https://alimtalk-api.bizmsg.kr/v2/sender/send";
+        var request_isAsync = false;
+        var request;
+
+        var sendArray = [];
+        var sendObj = {};
+
+        sendObj['message_type'] = 'at';
+        sendObj['phn'] = tel;
+        sendObj['profile'] = 'c7e3194c1837cb3e14bfbc997e24b437ff58a4f6';
+        sendObj['tmplId'] = tmplId;
+        sendObj['msg'] = msg;
+
+        sendArray.push(sendObj);
+        var sendData = JSON.stringify(sendArray);
+
+        $.ajax({
+            type: "POST",
+            //dataType : "json",
+            dataType: "text",
+            headers: {
+                'Content-Type': 'application/json',
+                'userid': 'dentalseed'
+            },
+            url: request_url,
+            data: sendData,
+            success: function(data) {
+                //document.getElementById("response").value = JSON.stringify(data);
+                $.each(JSON.parse(data), function(index, entry) {
+                    if (entry["code"] == 'success') {
+                        fnKakaoResult(idx, type, entry["code"]);
+                    }
+                });
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }
+    //카카오톡 발송결과 저장
+    function fnKakaoResult(idx, type, result) {
+        var params = {
+            patient_idx: idx,
+            type: type,
+            result: result
+        };
+
+        $.ajax({
+            url: "../kakao/send_proc.php",
+            type: "POST",
+            data: params,
+            //contentType: "application/json; charset=utf-8;",
+            dataType: "text",
+            success: function(data) {
+
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+    //접수대기환자 리스트
+    function fnReceiptReadyList() {
+        var params = {};
+        if ("/call/popup_requests_form.php?parent_table=requests&dentist_idx=1" == "/patient/arrangement.php") {
+            url = "../patient/ready_list2.php";
+        } else if ("/call/popup_requests_form.php?parent_table=requests&dentist_idx=1" == "/main/main.php") {
+            url = "../patient/ready_list.php";
+        }
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            //contentType: "application/json; charset=utf-8;",
+            dataType: "text",
+            success: function(data) {
+                $('#receipt_ready').html(data);
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    // 진료내역 파업
+    function fnViewPatientHistory(patient_idx, widget_type = '') {
+        switch (widget_type) {
+            case 'patient_file':
+                var url = im_widget_url + "/widget_patient_file.php";
+                break;
+            default:
+                var url = "../patient/latest.history.php";
+                break;
+        }
+        var params = {
+            patient_idx: patient_idx,
+            is_modal: 1
+        }
+        // console.log(params);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+                $('#writeForm').parsley();
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    /* ### 문자전송 ### */
+    function fnSms(smsmode, sms_target = 'user') {
+        var form = $("#searchform");
+        var smsmode = smsmode ? smsmode : "template";
+        var params = {
+            smsmode: smsmode,
+            sms_target: sms_target
+        };
+        url = "../sms/send_form.php";
+        // console.log(params);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+                $('#writeFormModal').parsley();
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+    /* ### 병원 공용분류 환경설정 ### */
+    function fnDentistOption(obj) {
+        var title = $(obj).attr('title');
+        var set_type = $(obj).val();
+
+        var url = "dentist/dentist_cf_option_form.php";
+
+        // console.log(title);
+        var params = {
+            get_title: title,
+            set_type: set_type
+        };
+        // console.log(params + "/ url:" + url);
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+                $('#writeFormModal').parsley();
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+    // 정열순
+    function fnOrderby(opj) {
+        var orderby = $('#search_orderby').val();
+        var orderbyfield = $('#search_orderby_field').val();
+
+        if (opj == orderbyfield)
+            ord = (orderby == "desc") ? "asc" : "desc";
+        else
+            ord = "desc";
+
+        $('#searchform #search_orderby').val(ord);
+        $('#searchform #search_orderby_field').val(opj);
+        // console.log(opj + " > " + ord);
+        fnSearch();
+    }
+
+    $("#todo").sortable({
+        connectWith: ".connectList",
+        update: function(event, ui) {
+            var todo = $("#todo").sortable("toArray");
+            // console.log(todo);
+            var json_str = window.JSON.stringify(todo);
+            // $('.output').html(json_str);
+        }
+    })
+
+    Date.prototype.format = function(fmt) {
+        var o = {
+            "M+": this.getMonth() + 1, //月份 
+            "d+": this.getDate(), //日 
+            "h+": this.getHours(), //小时 
+            "m+": this.getMinutes(), //分 
+            "s+": this.getSeconds(), //秒 
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+            "S": this.getMilliseconds() //毫秒 
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+
+    // 검색기간 선택
+    function fnSearchType_new(type, now_type) {
+        // type && set_cookie("search_date_type", type, 1000); // 일자 검색유형
+        var start_dt_form = $("#searchform #search_type");
+        if (type == '기간별') {
+            start_dt_form.removeClass("hidden");
+        } else if (type == '년도별') {
+
+        } else if (type == '월별') {
+            start_dt_form.removeClass("hidden");
+
+        } else if (type == '일별') {
+            start_dt_form.addClass("hidden");
+        }
+
+        if (type != now_type) {
+            switch (type) {
+                case '일별':
+                    var e_d = new Date().format("yyyy-MM-dd");
+                    $("#searchform #search_end_dt").val(e_d);
+                    break;
+                case '기간별':
+                    var s_d = '2024-06-01';
+                    var e_d = new Date(new Date(s_d).setMonth(new Date(s_d).getMonth() + 1)).format("yyyy-MM-dd");
+                    e_d = new Date(new Date(e_d).setDate(new Date(e_d).getDate() - 1)).format("yyyy-MM-dd");
+                    $("#searchform #search_end_dt").val(e_d);
+                    $("#searchform #search_start_dt").val(s_d);
+                    break;
+                case '최근별':
+                    var e_d = new Date().format("yyyy-MM-dd");
+                    var s_d = new Date(new Date(s_d).setMonth(new Date(s_d).getMonth() - 1)).format("yyyy-MM-dd");
+                    s_d = new Date(new Date(s_d).setDate(new Date(s_d).getDate() + 1)).format("yyyy-MM-dd");
+                    $("#searchform #search_end_dt").val(e_d);
+                    $("#searchform #search_start_dt").val(s_d);
+                    break;
+                default:
+                    break;
+            }
+        }
+        // console.log(e_d); // 2022-01-18 15:20:39
+        // console.log(s_d); // 2022-01-18 15:20:39
+        /* $("#searchform #search_start_dt").val('');
+        $("#searchform #search_end_dt").val('');
+        $('#searchform').submit(); */
+        fnSearch();
+    }
+
+    function dateFormatConversion(inputTime) {
+        var date = new Date(inputTime);
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? ('0' + m) : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        var h = date.getHours();
+        h = h < 10 ? ('0' + h) : h;
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        minute = minute < 10 ? ('0' + minute) : minute;
+        second = second < 10 ? ('0' + second) : second;
+        return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
+    };
+    // 검색기간 선택
+    function fnChangeSearchType(type, now_type) {
+        var search_type = $("#searchform #search_type").val();
+        var ig_search_start_dt = $("#searchform #ig_search_start_dt");
+        var ig_search_end_dt = $("#searchform #ig_search_end_dt");
+        var search_data_range1 = $("#searchform .search_data_range1");
+        var search_data_range2 = $("#searchform .search_data_range2");
+        var today = new Date().format("yyyy-MM-dd");
+
+        switch (search_type) {
+            case '기간별':
+                ig_search_start_dt.removeClass("hidden");
+                ig_search_end_dt.removeClass("hidden");
+                search_data_range1.addClass("hidden");
+                search_data_range2.removeClass("hidden");
+                break;
+            default:
+                ig_search_start_dt.addClass("hidden");
+                search_data_range2.addClass("hidden");
+                search_data_range1.removeClass("hidden");
+                search_data_range2.addClass("hidden");
+                break;
+        }
+    }
+
+    function fnChangeSearchDateRange(val) {
+        var search_type = $("#searchform #search_type").val();
+        var ig_search_start_dt = $("#searchform #ig_search_start_dt");
+        var ig_search_end_dt = $("#searchform #ig_search_end_dt");
+        var today = new Date().format("yyyy-MM-dd");
+
+        var currentYear = new Date().getFullYear();
+        var currentMonth = new Date().getMonth(); // 0:1월 11:12월
+        // console.log(val);
+
+        switch (search_type) {
+            case "연간":
+                switch (val) {
+                    case '올해':
+                        $("#searchform #search_end_year").val(currentYear);
+                        // console.log(currentYear);
+                        break;
+                    case '작년':
+                        $("#searchform #search_end_year").val(currentYear - 1);
+                        // console.log(currentYear - 1);
+                        break;
+                    default:
+                        var regex_before_year = /^(\d+)년전$/;
+                        var regex_after_year = /^(\d+)년후$/;
+                        var before_year = regex_before_year.exec(val);
+                        var after_year = regex_after_year.exec(val);
+
+                        if (before_year && before_year[1]) {
+                            var e_d = currentYear - before_year[1];
+                            $("#searchform #search_end_year").val(e_d);
+                        }
+
+                        if (after_year && after_year[1]) {
+                            var e_d = currentYear + after_year[1];
+                            $("#searchform #search_end_year").val(e_d);
+                        }
+                        break;
+                }
+                break;
+            case "연간범위":
+                var regex_year_arange1 = /^최근(\d+)년간$/;
+                var regex_year_arange2 = /^작년부터 (\d+)년간$/;
+
+                var year_arange1 = regex_year_arange1.exec(val);
+                var year_arange2 = regex_year_arange2.exec(val);
+
+                if (year_arange1 && year_arange1[1]) {
+                    // console.log(year_arange1);
+                    var e_d = currentYear;
+                    var s_d = currentYear - year_arange1[1] + 1;
+                    $("#searchform #search_end_year").val(e_d);
+                    $("#searchform #search_start_year").val(s_d);
+                }
+
+                if (year_arange2 && year_arange2[1]) {
+                    // console.log(year_arange2);
+                    var e_d = currentYear - 1;
+                    var s_d = e_d - year_arange2[1] + 1;
+                    $("#searchform #search_end_year").val(e_d);
+                    $("#searchform #search_start_year").val(s_d);
+                }
+                break;
+            default:
+                switch (val) {
+                    case '오늘':
+                        $("#searchform #search_end_dt").val(today);
+                        break;
+                    case '어제':
+                        var today = new Date(new Date(today).setDate(new Date(today).getDate() - 1)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(today);
+                        break;
+                    case '한달전':
+                        var today = new Date(new Date(today).setMonth(new Date(today).getMonth() - 1)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(today);
+                        break;
+                    case '3개월전':
+                        var today = new Date(new Date(today).setMonth(new Date(today).getMonth() - 3)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(today);
+                        break;
+                    case '6개월전':
+                        var today = new Date(new Date(today).setMonth(new Date(today).getMonth() - 6)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(today);
+                        break;
+                    case '1년전':
+                        var today = new Date(new Date(today).setMonth(new Date(today).getMonth() - 12)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(today);
+                        break;
+                    case '최근별':
+                    case '최근 한달':
+                        var e_d = new Date().format("yyyy-MM-dd");
+                        var s_d = new Date(new Date(e_d).setMonth(new Date(e_d).getMonth() - 1)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    case '최근 한주':
+                        var e_d = new Date().format("yyyy-MM-dd");
+                        var s_d = new Date(new Date(e_d).setDate(new Date(e_d).getDate() - 7)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    case '최근 3개월':
+                        var e_d = new Date().format("yyyy-MM-dd");
+                        var s_d = new Date(new Date(e_d).setMonth(new Date(e_d).getMonth() - 3)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    case '최근 6개월':
+                        var e_d = new Date().format("yyyy-MM-dd");
+                        var s_d = new Date(new Date(e_d).setMonth(new Date(e_d).getMonth() - 6)).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    case '작년':
+                        var get_year = currentYear - 1;
+                        var s_d = new Date(get_year, 0, 1).format("yyyy-MM-dd");
+                        var e_d = new Date(get_year, 11, 31).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    case '2년전':
+                        var get_year = currentYear - 2;
+                        var s_d = new Date(get_year, 0, 1).format("yyyy-MM-dd");
+                        var e_d = new Date(get_year, 11, 31).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    case '3년전':
+                        var get_year = currentYear - 3;
+                        var s_d = new Date(get_year, 0, 1).format("yyyy-MM-dd");
+                        var e_d = new Date(get_year, 11, 31).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    case '저번주':
+                        var year = new Date().getFullYear();
+                        var month = new Date().getMonth() + 1;
+                        var day = new Date().getDate();
+                        var thisWeekStart;
+                        if (new Date().getDay() == 0) {
+                            thisWeekStart = (new Date(year + '/' + month + '/' + day)).getTime() - ((new Date().getDay()) + 6) * 86400000;
+                        } else {
+                            thisWeekStart = (new Date(year + '/' + month + '/' + day)).getTime() - ((new Date().getDay()) - 1) * 86400000;
+                        }
+                        var prevWeekStart = thisWeekStart - 7 * 86400000;
+                        var prevWeekEnd = thisWeekStart - 1 * 86400000;
+                        var e_d = new Date(prevWeekStart).format("yyyy-MM-dd");
+                        var s_d = new Date(prevWeekEnd).format("yyyy-MM-dd");
+                        $("#searchform #search_end_dt").val(s_d);
+                        $("#searchform #search_start_dt").val(e_d);
+                        break;
+                    case '저번달':
+                        var prevCurrentYear = 0,
+                            prevCurrentMonth = 0;
+                        if (currentMonth == 0) {
+                            prevCurrentYear = currentYear - 1;
+                            prevCurrentMonth = 12;
+                        } else {
+                            prevCurrentYear = currentYear;
+                            prevCurrentMonth = currentMonth - 1;
+                        }
+                        var prevmonthLastday = (new Date(currentYear, currentMonth, 1)).getTime() - 86400000;
+                        var s_d = new Date(prevCurrentYear, prevCurrentMonth, 1).format("yyyy-MM-dd");
+                        var e_d = new Date(prevmonthLastday).format("yyyy-MM-dd");
+
+                        $("#searchform #search_end_dt").val(e_d);
+                        $("#searchform #search_start_dt").val(s_d);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+        }
+        // console.log(e_d);
+        // console.log(s_d);
+        $('#searchform').submit();
+    }
+
+    function im_notify(data) {
+        var toast = $('.toast');
+        $('.toast .toast-body').html("새로운 알림 " + data + "건")
+        setTimeout(function() {
+            toast.toast({
+                delay: 5000,
+                animation: true
+            });
+            toast.toast('show');
+            var audio = $("#audio")[0];
+        }, 1000);
+
+    }
+
+    // 스크롤 따라 다니기
+    $(window).bind("scroll", function() {
+        let toast = $('.toast');
+        toast.css("top", window.pageYOffset + 20);
+    });
+
+    //메세지 비우기
+    function fnUserMassegeDel(crudMode, idx) {
+        var url = "user/ajax.user_message.php";
+        if (!crudMode) alert("fnUserMassegeDel() crudMode 값이 없습니다.");
+        var params = {
+            crudMode: crudMode,
+            idx: idx,
+        }
+        // console.log(params + "/ URL: " + url);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                // console.log(data);
+                switch (crudMode) {
+                    case 'U':
+                        if (!data) {
+                            alert('삭제오류!' + data);
+                            return false;
+                        }
+                        break;
+                    case 'D':
+                        if (!data) {
+                            alert('삭제오류!' + data);
+                            return false;
+                        }
+                        if (!idx) fnUserMassegeLatest();
+                        break;
+                    case 'C':
+                        if (data > 0) {
+                            im_notify(data);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    function fnUserMassegeLatest() {
+        var head_message_container = $("#head_message_container");
+        var url = "user/user_massege_latest.php";
+        var params = {
+            crudMode: 'C'
+        }
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                //// console.log(data);
+                head_message_container.html(data)
+                if (!data) alert('로딩실패!' + data);
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    /* 수납폼 */
+    function fnPatientPayForm(patient_idx) {
+        var param = {};
+        var url = "./call/call_form.php";
+        $.ajax({
+            url: url,
+            data: param,
+            type: "POST",
+            dataType: "text",
+            success: function(data) {
+                if (data) {
+                    $('#modalContentXl').html(data);
+                    $('#modalPopupXl').modal('show');
+                    $('#writeFormModal').parsley();
+                }
+            }
+        });
+    }
+
+    /* 환자수행판 */
+    function fnPatientWorkForm(patient_idx) {
+        var param = {};
+        var url = "./call/call_form.php";
+        $.ajax({
+            url: url,
+            data: param,
+            type: "POST",
+            dataType: "text",
+            success: function(data) {
+                if (data) {
+                    $('#modalContentXl').html(data);
+                    $('#modalPopupXl').modal('show');
+                    $('#writeFormModal').parsley();
+                }
+            }
+        });
+    }
+
+    /* 환자수행판 위젯로드 */
+    function loadWidgetPatientImplement(patient_idx, no = 0, field = '') {
+        $('.loading-container').addClass('sk-loading'); // 로딩추가
+        var obj = $("#WidgetPatientImplement");
+        var url = "widget/widget_patient_implement.php";
+        var params = {
+            patient_idx: patient_idx,
+            no: no,
+            field: field,
+        };
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('.loading-container').removeClass('sk-loading'); // 로딩삭제
+                obj.html(data);
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    function loadPatientActionImplenment(patient_idx, no = 0, field = '') {
+        $('.loading-container').addClass('sk-loading'); // 로딩추가
+        var obj = $("#PatientActionImplenment");
+        var url = "patient/implement_action_form.php";
+        var params = {
+            patient_idx: patient_idx,
+            no: no,
+            field: field,
+        };
+        // console.log('수행판 리로딩:')
+        // console.log(params)
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('.loading-container').removeClass('sk-loading'); // 로딩삭제
+                obj.html(data);
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    // 컴플레인 바로입력, 수납 바로 입력
+    function fnPatientOrder(order_type = '', patient_idx, no = 0, event = '', data = '') {
+        var modal_c = "#modalContentXl";
+        var modal_p = "#modalPopupXl";
+        var url = "performance/order.php";
+        switch (order_type) {
+            case 'widget_tab_patient_order': // 리콜
+                url = "widget/widget_tab_patient_order.php";
+                break;
+            case 'arrange_countdown': // 리콜
+                var url = "patient/requests_form.php";
+                break;
+            case 'recall': // 리콜
+            case 'happycall': // 해피콜
+            case 'patient_requests': // 문의
+                var url = "call/item_form.php";
+                if (!patient_idx) {
+                    var url = "../include/patient_search_list.php";
+                }
+                break;
+            case 'patient_complain': // 문의
+                var url = "performance/order.php";
+                if (!patient_idx) {
+                    var url = "../include/patient_search_list.php";
+                }
+                break;
+            case 'requests': // 상담
+                var url = "call/requests_form.php";
+                if (!patient_idx) {
+                    var url = "../include/patient_search_list.php";
+                }
+                break;
+            case 'patient_introducer': // 소개자 선택시
+                var patient_nm = no;
+                if (!patient_idx) {
+                    var url = "../include/patient_search_list.php";
+                } else {
+                    $("#introducer_id").val(patient_idx);
+                    $("#introducer_nm").val(patient_nm);
+                    $(modal_p).modal('hide');
+                    return true;
+                }
+                break;
+        }
+        var params = {
+            patient_idx: patient_idx,
+            no: no,
+            order_type: order_type,
+            event: event,
+            data: data
+        }
+        // console.log(params);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $(modal_c).html(data);
+                $(modal_p).modal('show');
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    // 게시판로드  //
+    function fnLoadBoardList(field, patient_idx, no = 0, ) {
+        if (!field) alert("fnLoadBoardList() not field!")
+        var modal_c = "#modalContentXl";
+        var modal_p = "#modalPopupXl";
+        switch (field) {
+            case 'formatting':
+                var tab_id = "formatting";
+                break;
+        }
+        var params = {
+            patient_idx: patient_idx,
+            no: no,
+            field: field,
+            is_modal: 1
+        };
+        // console.log(params);
+        $.ajax({
+            url: "../notice/list.php",
+            type: "POST",
+            data: params,
+            dataType: "text",
+            cache: false,
+            success: function(data) {
+                $(modal_c).html(data);
+                $(modal_p).modal('show');
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }
+
+    function fnLoadWidget_new(taget, type, page) {
+        var $this = $("#" + taget),
+            val,
+            data,
+            form,
+            params = {},
+            event,
+            event_param,
+            $form,
+            container;
+        container = $this.attr('id');
+        page = page > 1 ? page : 1;
+        $this.parent(".loading-container").addClass('sk-loading'); // 로딩추가
+        if (container) {
+            val = $this.val(),
+                data = $this.data(),
+                form = $this.data('form'),
+                !type && (type = taget),
+                form = $(form);
+            form && (params = new FormData(form[0]));
+
+            var url = type + ".php";
+
+            $.each(data, function(i, e) {
+                params.append(i, e);
+            });
+            params.append("act_button", document.pressed);
+            params.append("page", page);
+            // console.log(params);
+            url && $.ajax({
+                url: url,
+                type: "POST",
+                data: params,
+                async: true,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    $this.html(data);
+                    $this.parent(".loading-container").removeClass('sk-loading'); // 로딩삭제
+                    swal.close();
+                },
+                error: function(request, status, error) {
+                    var msg = "ERROR : " + request.status + "<br>"
+                    msg += +"내용 : " + request.responseText + "<br>" + error;
+                    // console.log(msg);
+                    swal.close();
+                }
+            });
+        } else {
+            return false;
+        }
+    }
+
+    function fnLoadWidget(taget, type, page = 1) {
+        var $this = $("#" + taget),
+            url,
+            val,
+            data,
+            form,
+            params = {},
+            event,
+            event_param,
+            $form,
+            container,
+            filter_key;
+        container = $this.attr('id');
+        if (container) {
+            val = $this.val(),
+                data = $this.data(),
+                url = $this.data("url"),
+                form = $this.data('form'),
+                !type && (type = taget),
+                !filter_key && (filter_key = "");
+
+            if (page == "reset") {
+                page = 1;
+            } else {
+                if (form && $(form)) {
+                    $form = $(form).serializeArray();
+                } else {
+                    $("#form_" + type) && ($form = $("#form_" + type).serializeArray());
+                }
+            }
+
+            switch (type) {
+                case "guarantee_item_list": // 보증입력정보설정항목
+                    var url = "dentist_guarantee/guarantee_item_list.php";
+                    break;
+                case "patient_invoice_form": // 현금영수증발급
+                    url = "patient/patient_invoice_form.php";
+                    break;
+                case "item_form_re_m":
+                    url = "consulting/item_form_re_m.php";
+                    break;
+                case "item_form_su":
+                    url = "consulting/item_form_su.php";
+                    break;
+                case "reserv_form":
+                    url = "reserv/reserv_form.php";
+                    break;
+                case "inc_toothlist_check":
+                    url = "include/inc_toothlist_check.php";
+                    break;
+                case "dentist_form_data_list":
+                    url = "widget/widget_df_data_list.php";
+                    break;
+                    // 덴비폼
+                case "patient_arrange_form":
+                    url = "patient/arrange_form.php";
+                    break;
+                case "dentist_form_data_form":
+                    url = "widget/dentist_form_data_list.php";
+                    break;
+                    // 덴비옵션
+                case "dentist_cf_option_list": // 옵션
+                    url = "dentist/dentist_cf_option_list.php";
+                    break
+                case "arrange_list_new_push": // 
+                    url = "patient/arrange_list_new_push.php";
+                    break
+                case "arrange_list_new": // 
+                    url = "patient/arrange_list_new.php";
+                    break
+                case "arrange_list_new_pro": // 
+                    url = "patient/arrange_list_new_pro.php";
+                    break
+                case "arrange_list_doctor": // 
+                    url = "patient/arrange_list_doctor.php";
+                    break
+                case "arrange_list_cure": // 
+                    url = "patient/arrange_list_cure.php";
+                    break
+                case "arrange_list_consulting": // 
+                    url = "patient/arrange_list_consulting.php";
+                    break
+                case "arrange_list_complain": // 
+                    url = "patient/arrange_list_complain.php";
+                    break
+                case "arrange_list_cura_plan": // 
+                    url = "patient/arrange_list_cura_plan.php";
+                    break
+                case "arrange_list_cure": // 
+                    url = "patient/arrange_list_cure.php";
+                    break
+                case "arrange_list_reserve": // 
+                    url = "patient/arrange_list_reserve.php";
+                    break
+                case "patient_interview": // 
+                    var url = "interview/tab01_modal.php";
+                    break;
+                case "plan_view":
+                case "briefing_view":
+                    url = "consulting/consulting_print.php";
+                    break;
+                case "cure": // 신환문의
+                    url = "consulting/item_form_cure_m.php";
+                    break;
+                case "consulting_form_modal":
+                    url = "consulting/consulting_form_modal.php"; // 빠른상담관리
+                    break;
+                case "cure_order_form_modal":
+                    url = "performance/cure_order_form_modal.php"; // 기공의뢰
+                    break;
+                case "consulting_list":
+                    url = "consulting/consulting_list.php"; // 상담비서 리스트
+                    break;
+                case "consulting_form1":
+                case "consulting_form2":
+                case "consulting_form3":
+                    url = "consulting/" + type + ".php";
+                    break;
+                case "cure_list":
+                    url = "performance/cure_list.php";
+                    break;
+                case "patient_pay_plan":
+                case "patient_reserver_plan":
+                case "patient_pay_form":
+                case "patient_payment":
+                case "patient_payment_self":
+                case "patient_invoice_form":
+                case "patient_consulting_amt":
+                case "patient_cure_label": //환자진료라벨
+                case "patient_consulting_label": //환자상담라벨
+                    url = "performance/arrange_order_form.php";
+                    break;
+                case "arrange_postit":
+                    url = "performance/arrange_postit.php";
+                    break;
+                case "arrange_postit_push": // 포스트잇 푸시
+                    url = "performance/arrange_postit_push.php";
+                    break;
+                case "patient_action_plenment":
+                    url = "patient/implement_action_form.php";
+                    break;
+                case "patient_action_plenment_consulting":
+                    url = "consulting/implement_action_form.php";
+                    break;
+                case "widget_cure_list":
+                    url = "widget/widget_cure_list.php";
+                    break;
+                case "arrange_chair_item":
+                    url = "patient/arrange_item_ajax.php";
+                    break;
+                case 'chair_info':
+                case "chair":
+                    var is_scrap = $this.find('input:radio[name="is_scrap"]:checked').val();
+                    is_scrap && (data['is_scrap'] = is_scrap);
+                    // console.log(is_scrap);
+                    url = "patient/arrange_chair_info_new.php";
+                    break;
+                case "widget_board_list":
+                    url = "widget/widget_board_list.php";
+                    break;
+                case "call_tiem_form":
+                    url = "widget/widget_tab_patient_call.php";
+                    break;
+                case "patient_file":
+                    url = "widget/widget_patient_file.php";
+                    break;
+                case "patient_memo":
+                    url = "widget/widget_patient_memo.php";
+                    break;
+                case "patient_memo_charting":
+                    // params['memo_field'] = "charting";
+                    url = "widget/widget_patient_memo_chatting.php";
+                    break;
+                case "patient_memo_next":
+                    params['memo_field'] = "next";
+                    url = "widget/widget_patient_memo.php";
+                    break;
+                case "patient_memo_pi":
+                    params['memo_field'] = "pi";
+                    url = "widget/widget_patient_memo.php";
+                    break;
+                case "patient_memo_opinion":
+                    params['memo_field'] = "opinion";
+                    url = "widget/widget_patient_memo.php";
+                    break;
+                case "ag_list":
+                    url = "widget/widget_ag_list.php";
+                    break;
+                case "plan_list":
+                    url = "widget/widget_plan_list.php";
+                    break;
+                case "plan_form": // 치료계획
+                    url = "consulting/plan_form.php";
+                    break;
+                case "plan_formBody": // 치료계획
+                    url = "consulting/plan_formBody.php";
+                    break;
+                case "work_index": // 치료계획
+                    url = "work/list_new.php";
+                    break;
+                case "stock_cate_select": // 치료계획
+                    url = "order/stock_cate_select.php";
+                    break;
+                case "work_item_view": // 협업보기
+                    url = "work/item_view_ajax.php";
+                    break;
+                case "work_tiem_latest": // 업무리스트
+                    url = "work/item_latest.php";
+                    break;
+                case "work_tiem_latest_share": // 외부공유 업무리스트
+                    url = "work/item_latest_share.php";
+                    break;
+                case "work_cate_select": // 협업보기
+                    url = "work/work_cate_select.php";
+                    break;
+                case "widget_tab_work": // 업무리스트
+                    url = "widget/widget_tab_work.php";
+                    break;
+                case "widget_work_history": // 업무리스트
+                    url = "widget/widget_work_history.php";
+                    break;
+                case "widget_work_data": // 업무리스트
+                    url = "widget/widget_work_data.php";
+                    break;
+                case "user_select":
+                    url = "user/ajax.user_select.php";
+                    break;
+                case "sms_send_form":
+                    url = "sms/send_form.php";
+                    break;
+                case "patient_memo_list":
+                    url = "patient/patient_memo_list.php";
+                    break;
+                case "widget_patient_memo":
+                case "widget_patient_ag_memo":
+                case "widget_patient_re_memo":
+                case "widget_ag_list_table_memo":
+                case "widget_re_list_table_memo":
+                    url = "widget/widget_patient_memo.php";
+                    break;
+                case "toothlist":
+                case "toothlist_re":
+                case "toothlist_ag":
+                    url = "include/inc_toothlist_new.php";
+                    break;
+                case "widget_ag_list_table_ops":
+                    url = "widget/widget_re_list_table.php";
+                    break;
+                case "widget_sms_temp":
+                case "widget_sms_temp_dentist":
+                case "widget_sms_temp_common":
+                    url = "widget/widget_sms_temp.php";
+                    break;
+                    /////////////////////////////////////
+                case "multi_search": // 검색
+                    var url = "dailynote/multi_search.php";
+                    break;
+                case "static": // 통계바
+                    url = "dailynote/static.ajax.php";
+                    break;
+                    /////////////////////////////////////
+                default:
+                    if (!url) {
+                        url = "widget/" + type + ".php";
+                    }
+                    break;
+            }
+            $this.parent(".loading-container").addClass('sk-loading'); // 로딩추가
+            $.each(data, function(i, e) {
+                params[i] = e;
+            });
+            $form && $.each($form, function() {
+                params[this.name] = this.value;
+            });
+            params['filter_key'] = filter_key;
+            params['page'] = page;
+            params['type'] = type;
+            params['crudmode'] && (params['crudMode'] = params['crudmode']);
+            // console.log("fnLoadWidget:" + taget + "url:" + url);
+            // console.log(params);
+            url && $.ajax({
+                url: url,
+                type: "POST",
+                cache: false,
+                dataType: "text",
+                data: params,
+                success: function(data) {
+                    $this.html(data);
+                    $this.parent(".loading-container").removeClass('sk-loading'); // 로딩삭제
+                    switch (type) {
+                        case "inc_toothlist_check":
+                            /* var ds = new DragSelect({
+                                area: document.getElementById('teechList_check'),
+                                selectables: document.getElementsByClassName('dragitem'),
+                                multiSelectMode: true,
+                                selectedClass: 'active',
+                                callback: function(elements) {
+                                    fnAddtooth_new();
+                                },
+                            }); */
+                            break;
+                    }
+                },
+                error: function(request, status, error) {
+                    var msg = "ERROR : " + request.status + "<br>"
+                    msg += +"내용 : " + request.responseText + "<br>" + error;
+                    // console.log(msg);
+                }
+            });
+        } else {
+            return false;
+        }
+    }
+
+    function fnModalForm(obj) {
+        var params = {};
+        params = obj;
+        params.is_modal = true;
+        //#######
+        switch (obj.toggle) {
+            case 'fnChangeUp':
+                switch (obj.type) {
+                    case 'arrange_status': // 상태변경
+                        switch (obj.data) {
+                            case '접수':
+                                params.type = "widget_tab_patient_order";
+                                break;
+                            case '환자호출':
+                                params.type = "chair_info";
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+        //#######
+        switch (params.type) {
+            case "widget_tab_patient_order": // 포스트잇
+                var url = "widget/widget_tab_patient_order.php";
+                break;
+            case 'chair_info':
+                url = "patient/arrange_chair_info_new.php";
+                break;
+            case 'chair_info':
+                url = "patient/arrange_chair_info_new.php";
+                break;
+            case 'widget_edit_form':
+                url = "widget/widget_edit_form.php";
+                break;
+        }
+        // console.log(params.type);
+        // console.log(url);
+        // console.log(params);
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                var mc = $('#modalContentXl');
+                var mp = $('#modalPopupXl');
+                mc.attr("data-trigger", params.trigger);
+                mc.attr("data-hiddenevent", params.event);
+                mc.html(data);
+                mp.modal('show');
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }
+
+    // 입력폼  MODAL 파업창
+    $(document).on('click change', '[data-toggle="fnModalForm"], .fnModalForm', function(e) {
+        var $this = $(this),
+            url = $this.data('url'),
+            $form,
+            params = {},
+            hiddenevent = $this.attr("data-hiddenevent"),
+            trigger = $this.data('trigger'),
+            data = $this.data(),
+            type = $this.data('type'),
+            modal_size = $this.data('modal_size'),
+            container = $this.data('container'),
+            form = $this.data('form');
+        w = $this.data('w'),
+            is_dual = $this.data('is_dual'),
+            val = $this.val();
+        var modalPopup = $this.parents(".modal").attr('id');
+        var modalConten = $this.parents(".modal-dialog").attr('id');
+        form && $(form) && ($form = $(form).serializeArray());
+        hiddenevent = hiddenevent ? hiddenevent : "";
+        trigger = trigger ? trigger : "";
+        switch (type) {
+            case "user_work_checkin": // 근태기록
+                url = "personnel/user_work_checkin.php";
+                break;
+            case "user_work_form": // 근태등록
+                url = "personnel/user_work_form.php";
+                break;
+            case "guarantee_data_view_modal": // 보증서 미리보기
+                url = "dentist_guarantee/guarantee_data_view_modal.php";
+                break;
+            case "guarantee_group_add": // 보증서등록
+                url = "dentist_guarantee/guarantee_group_add.php";
+                modal_size = "lg";
+                break;
+            case "guarantee_data_form": // 보증서등록
+                url = "dentist_guarantee/guarantee_data_form.php";
+                break;
+            case "guarantee_group_list_modal": // 보증서선택
+                url = "dentist_guarantee/guarantee_group_list_modal.php";
+                break;
+            case "guarantee_item_form": // 보증서 설정
+                url = "dentist_guarantee/guarantee_item_form.php";
+                modal_size = "sm";
+                break;
+            case "callcenter_form": // 콜센터 수정
+                var url = "call/callcenter_form.php";
+                break;
+            case "callcenter_form": // 콜센터 수정
+                var url = "call/callcenter_form.php";
+                break;
+            case "callcenter_popup": // 콜센터 수행전 팝업
+                var url = "call/callcenter_popup.php";
+                break;
+            case "commission_keyword_setting_form":
+                var url = "commission/commission_keyword_setting_form.php";
+                break;
+            case "dentist_holiday_form":
+                var url = "dentist/dentist_holiday_form.php";
+                break;
+            case "kakao_template_send_form":
+                var url = "kakaoSend/kakao_template_send_form.php";
+                sweetLoding('발송 데이터 분석중입니다...');
+                break;
+            case "kakao_template_modal_view":
+                var url = "kakaoSend/kakao_template_modal_view.php";
+                break;
+            case "filter_form":
+                var url = "user/filter_form.php";
+                break;
+            case "df_write_view":
+                var url = "dentist_form/df_write_view.php";
+                break;
+            case "template_form_pro":
+                var url = "sms/template_form_pro.php";
+                break;
+            case "template_form":
+                var url = "sms/template_form.php";
+                break;
+            case "patient_search_list":
+                var url = "include/patient_search_list.php";
+                break;
+            case "patient_payment_item_form":
+                var url = "patient/patient_payment_item_form.php";
+                break;
+            case "patient_invoice":
+                var url = "patient/patient_invoice_form.php";
+                break;
+            case "patient_invoice_form":
+                var url = "patient/patient_invoice_form.php";
+                break;
+            case "denb_menu_form":
+                var url = "adm/denb_menu_form.php";
+                break;
+            case "dentist_group_form":
+                var url = "adm/dentist_group_form.php";
+                break;
+            case "denb_cash_cart_form":
+                var url = "finance/denb_cash_cart_form.php";
+                break;
+            case "dentist_self_payment_form":
+                var url = "finance/dentist_self_payment_form.php";
+                break;
+            case "incentive_item_form":
+                var url = "commission/incentive_item_form.php";
+                break;
+            case "patient_mypage_requests_form":
+                var url = "patient/patient_mypage_requests_form.php";
+                break;
+            case "user_reserv_lock_form":
+                var url = "user/user_reserv_lock_form.php";
+                break;
+            case "item_list_sort":
+                hiddenevent = "location.reload()";
+                var url = "item/item_list_sort.php";
+                break;
+            case "requests_self_form":
+                var url = "call/requests_self_form.php";
+                break;
+            case "chair_form":
+                hiddenevent = "location.reload()";
+                var url = "chair/chair_form.php";
+                break;
+            case "chair_sort_form":
+                hiddenevent = "location.reload()";
+                var url = "chair/chair_sort_form.php";
+                break;
+            case "fnPatientOrder":
+                var url = "performance/order.php";
+                break;
+            case "arrange_postit":
+                var url = "performance/arrange_postit.php";
+                break;
+            case "arrange_postit_print_view":
+                var url = "arrange/arrange_postit_print_view.php";
+                break;
+            case "arrange_postit_push": // 포스트잇 푸시
+                var url = "performance/arrange_postit_push.php";
+                break;
+            case "call_requests_form": // 신환문의
+                var url = "call/requests_form.php";
+                break;
+            case "patient_arrange_form": // 접수현황수정
+                var url = "patient/arrange_form.php";
+                break;
+            case "patient_menu":
+                var url = "patient/patient_menu.php";
+                break;
+            case "dentist_form_data_list":
+                var url = "widget/widget_df_data_list.php";
+                break;
+            case "dentist_form_data_form":
+                var url = "widget/dentist_form_data_list.php";
+                break;
+            case "happycall":
+            case "recall":
+                var url = "call/item_form.php";
+                break;
+            case "common_code_group":
+                var url = "common/code_group_form.php";
+                break;
+            case "item_info_user":
+                var url = "item/item_form_user.php";
+                break;
+            case "user_schedules":
+                var url = "personnel/schedules_form.php";
+                break;
+            case "user_overtime":
+                var url = "personnel/overtime_form.php";
+                break;
+            case "patient_implement_check":
+            case 'implement_form': // 수행
+                var url = "patient/implement_form.php";
+                break;
+            case "product_stock":
+                var url = "order/stock_form.php";
+                break;
+            case "call":
+                var url = "call/item_form.php";
+                break;
+            case 'commute_form': // 수행
+                url = "personnel/commute_form.php";
+                break;
+            case 'consulting_form': // 수행
+                url = "consulting/consulting_form_modal.php";
+                break;
+            case 'patient_complain': // 수행
+                url = "call/complain_form.php";
+                break;
+            case 'stock': // 사이트맵
+                url = "order/stock_form.php";
+                break;
+            case 'stock_log': // 사이트맵
+                url = "order/stock_item_form.php";
+                break;
+            case 'sitemap': // 사이트맵
+                url = "include/sitemap.php";
+                break;
+            case 'statistics_downlaod_form': // 일일보고
+                url = "statistics/download_form.php";
+                break;
+            case 'df_form': // 덴비폼
+                url = "dentist_form/df_group_form.php";
+                break;
+            case 'df_form_interview': // 덴비폼
+                url = "dentist_form/df_group_interview_form.php";
+                break;
+
+            case 'dd_form': // 덴비폼
+                url = "dentist_display/dd_group_form.php";
+                break;
+            case 'df_item_form': // 덴비폼
+                url = "dentist_form/df_item_form.php";
+                break;
+            case 'df_item_interview_form': // 덴비폼
+                url = "dentist_form/df_item_interview_form.php";
+                break;
+            case 'dd_item_form': // 덴비폼
+                url = "dentist_display/dd_item_form.php";
+                break;
+            case 'chat':
+                url = "patient/chat_form.php";
+                break;
+            case 'chair_info':
+                url = "patient/arrange_chair_info_new.php";
+                break;
+            case 'widget_tab_patient_order':
+            case 'result_amt': // 결정금액 설정
+                url = "widget/widget_tab_patient_order.php";
+                break;
+            case 'widget_patient_introducer':
+                url = "widget/widget_patient_introducer.php";
+                break;
+            case 'patient_form':
+                url = "patient/patient_form.php";
+                break;
+            case 'cure':
+                if (is_dual) {
+                    url = "consulting/item_form_cure_m.php";
+                } else {
+                    url = "consulting/item_form_cure.php";
+                }
+                break;
+            case 'cure_primary':
+                url = "consulting/item_form_cure_primary.php";
+                break;
+            case 'cure_order': // 기공의뢰
+                url = "consulting/item_form_cure_order.php";
+                break;
+            case 'recommendation': // 진단추가
+                url = "consulting/item_form_re.php";
+                break;
+            case 'recommendation_m': // 진단추가
+                url = "consulting/item_form_re_m.php";
+                break;
+            case 'agree': // 동의설정
+                url = "consulting/item_form_ag_m.php";
+                break;
+            case 'finance_item': // 상담
+                url = "finance/item_form.php";
+                break;
+            case 're_to_call': // 콜
+            case 'arrange_to_call': // 접수TO해피콜
+            case 'consulting_to_call': // 상담TO 리콜
+                url = "call/item_form.php";
+                break;
+            case 'requests': // 상담
+                var url = "call/requests_form.php";
+                break;
+            case 'patient_search': // 환자조회
+                var url = "../include/patient_search_list.php";
+                break;
+            case "plan":
+            case "plan_item":
+                switch (w) {
+                    case 'u':
+                    case 'cw':
+                        url = "consulting/plan_form_modal.php";
+                        break;
+                    default:
+                        url = "consulting/item_form_plan.php";
+                        break;
+                }
+                break;
+            case "plan_step":
+                url = "consulting/plan_form_step.php";
+                break;
+            case "plan_step_common":
+                url = "consulting/plan_form_step_common.php";
+                break;
+            case "plan_list":
+                url = "widget/widget_plan.php";
+                break;
+            case "plan_sort":
+                url = "consulting/plan_sort.php";
+                break;
+            case "plan_user": // 계획생성
+                url = "consulting/plan_user_form.php";
+                break;
+            case "plan_user_list": // 내계획함
+                url = "consulting/plan_user_list.php";
+                break;
+            case "patient_item_value_reset": // 진료행위 리셋팅
+                url = "dentist/dentist_cf_form.php";
+                break;
+            case "reserve_list":
+                url = "include/patient_reserve_list.php";
+                break;
+            case "reserve":
+            case "reserve_form":
+                                    url = "widget/widget_tab_patient_reserve.php";
+                                is_dual = true;
+                break;
+            case "reserv_form_action":
+                url = "reserv/reserv_form_action.php";
+                break;
+            case "reserv_kakao_form":
+                url = "reserv/reserv_kakao_form.php";
+                break;
+            case "board":
+                url = "notice/form.php";
+                break;
+            case "board_view":
+                url = "notice/view.php";
+                break;
+            case "patient_mypage_board_view":
+                url = "patient/patient_mypage_board_view.php";
+                break;
+            case "mypage_board_view":
+                url = "notice/view.php";
+                break;
+            case "agreement":
+                url = "login/register_agreement.php";
+                break;
+            case "agreement_dentist":
+                url = "login/register_agreement_dentist.php";
+                break;
+                // WORK 프로젝트 ##########################################
+            case "work":
+                url = "work/form_modal.php";
+                break;
+            case "work_item":
+            case "work_item_patient":
+                url = "work/item_form.php";
+                break;
+            case "work_cate":
+                url = "work/work_cate_form.php";
+                break;
+            case "work_item_view":
+                url = "work/item_view.php";
+                break;
+            case "work_share_form":
+                url = "work/work_share_form.php";
+                break;
+            case "work_report_view": // 일일보고서 출력
+                var url = "work/work_report_print.php";
+                break;
+            case "stock_cate":
+                url = "order/stock_cate_form.php";
+                break;
+            case "stock_group_form":
+                url = "order/stock_group_form.php";
+                break;
+                //병원 옵션설정 @@@@ 리셋필요
+            case "dentist_cf_option":
+                !trigger && (hiddenevent = "location.reload()");
+                url = "dentist/dentist_cf_option_form.php";
+                break;
+            case "company_info":
+                url = "widget/widget_tab_company.php";
+                break;
+            case "company_list":
+                url = "widget/widget_company_list.php";
+                break;
+            case "sms":
+                url = "sms/send_form.php";
+                break;
+            case "profile":
+                url = "user/profile.php";
+                break;
+            case "commute":
+                url = "personnel/commute_user_form.php";
+                break;
+            case "incentive_form_insert":
+                url = "commission/incentive_form_insert.php";
+                break;
+            default:
+                if (!url) {
+                    url = "widget/" + type + ".php";
+                }
+                break;
+        }
+        $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        val && (params['val'] = val);
+        params['field'] = $this.data('field') || val,
+            params['get_title'] = $this.attr('title'),
+            params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        params['is_modal'] = 1;
+
+        if (val == "column_sort") {
+            params['data_filter_key'] = $this.attr('data-filter_key');
+        }
+
+        log_modal(params); /////////////////////////////////////////////
+
+        var mc = $('#modalContentXl');
+        var mp = $('#modalPopupXl');
+        switch (type) {
+            case "reserv_kakao_form":
+            case "kakao_template_send_form":
+                modalPopup = false;
+                mc = $('#modalContentLg');
+                mp = $('#modalPopupLg');
+                break;
+            case "patient_payment_item_form":
+                modalPopup = false;
+                mc = $('#modalContent');
+                mp = $('#modalPopup');
+                break;
+            case "chair_sort_form":
+                mp = $('#modalPopup');
+                mc = $('#modalContent');
+                break;
+            case "kakao_template_modal_view":
+            case "guarantee_data_view_modal":
+                modalPopup = false;
+                mp = $('#modalPopup');
+                mc = $('#modalContent');
+                break;
+            case "arrange_postit_print_view":
+                modalPopup = false;
+                mp = $('#modalPopupSm');
+                mc = $('#modalContentSm');
+                break;
+            case "work_item":
+                /* fnReloadWorkC();
+                fnReloadWorkR(); */
+                break;
+        }
+
+        switch (modal_size) {
+            case "lg":
+                mc = $('#modalContentLg');
+                mp = $('#modalPopupLg');
+                break;
+            case "md":
+                mc = $('#modalContent');
+                mp = $('#modalPopup');
+                break;
+            case "sm":
+                mp = $('#modalPopupSm');
+                mc = $('#modalContentSm');
+                break;
+        }
+
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                if (modalPopup) {
+                    $('#' + modalConten).attr("data-trigger", trigger);
+                    $('#' + modalConten).attr("data-hiddenevent", hiddenevent);
+                    $('#' + modalConten).html(data);
+                } else {
+                    mc.attr("data-trigger", trigger);
+                    mc.attr("data-hiddenevent", hiddenevent);
+                    mc.html(data);
+                    mp.modal('show');
+                }
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }).on('click', "[data-toggle='fnAdmCf']", function(e) {
+        var $this = $(this),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            field = $this.data('field'),
+            val = $this.val(),
+            url = "dentist/dentist_cf_form.php";
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        val && (params['set_type'] = val);
+        // console.log(params);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on('click', '[data-toggle="fnFormUp"], .fnFormUp', function(e) {
+        var $this = $(this),
+            url = $(this).data('url'),
+            notice_msg = "save",
+            $title = $(this).attr('title'),
+            form = $this.data('form'),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            $target = $this.data('target') || $this.attr('href'),
+            val = $this.val(),
+
+            event = $this.data('event'),
+            trigger = "",
+            triggers = [],
+            crudmode = $this.data('crudmode');
+
+        trigger = $this.data('trigger');
+        $eval = $this.data('eval'); // 실행전 처리 함수
+        $eval && ($eval = $eval + "()"); // 실행전 처리 함수
+        form = form ? form : type;
+        form && ($form = $("form#" + form).serializeArray());
+        $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        params['crudmode'] && (params['crudMode'] = params['crudmode']);
+
+        if (crudmode) {
+            switch (crudmode) {
+                case 'U':
+                    $title = " 수정 하시겠습니까?";
+                    break;
+                case 'D':
+                case 'AD':
+                    notice_msg = "delete";
+                    $title = " 삭제 하시겠습니까?";
+                    break;
+                case 'AUS':
+                    $title = " 보류 하시겠습니까?";
+                    break;
+                case 'RS':
+                    $title = $title + ' 하시겠습니까? 리셋 하시기 전 주의사항을 한번더 확인 하시길 바랍니다. ';
+                    break;
+                default:
+                    $title = "";
+                    break;
+            }
+            if ($title) {
+                if (!confirm($title))
+                    return false;
+            }
+        }
+        switch (type) {
+            case "dd_item": // 디스플레이
+                url = "../dentist_display/dd_item_form_update.php";
+                break;
+            case "dentist_holiday": // 치과휴무 변경,삭제
+                url = "dentist/dentist_holiday_form_update.php";
+                break;
+            case "kakao_template":
+                url = "kakaoSend/kakao_template_update.php";
+                break;
+            case "dentist_form":
+                url = "dentist_form/df_group_form_update.php";
+                break;
+            case "dentist_form_data":
+                url = "dentist_form/df_wrete_form_update.php";
+                break;
+            case "dentist_form_item":
+                url = "dentist_form/df_item_form_update.php";
+                break;
+            case "patient_implement_check":
+                url = "patient/implement_form_update.php";
+                break;
+            case "call":
+                url = "call/item_form_update.php";
+                break;
+            case "complain":
+                url = "call/complain_form_update.php";
+                break;
+            case "reserve_form":
+                url = "reserv/reserv_form_update.php";
+                break;
+            case "patient_interview":
+                url = "interview/form_update.php";
+                break;
+            case "consulting_form1": // 상담관리
+            case "consulting_form3":
+                url = "consulting/form_update.php";
+                break;
+            case "consulting_form2": //치료수납계획
+                url = "patient/patient_form_update.php";
+                break;
+            case "df_item":
+                url = "dentist_form/df_item_form_update.php";
+                break;
+            case "df_item_interview":
+                url = "dentist_form/df_item_interview_form_update.php";
+                break;
+            case "patient":
+                url = "patient/form_update.php";
+                break;
+            case "consulting_chk":
+            case "consulting_chk_all":
+            case "performance_chk":
+            case "performance_chk_all":
+                if (!confirm('[' + $title + '] 하시겠습니까?')) return false;
+                url = "performance/order_form_update.php";
+                break;
+            case "result_cut_amt":
+                url = "performance/order_form_update.php";
+                break;
+            case "cure":
+            case "plan":
+            case "plan_item":
+            case "plan_order":
+            case "plan_item_order":
+            case "recommendation_m":
+            case "recommendation": // 
+            case "agree": // 
+            case "batch_item": // 
+                url = "consulting/item_form_update.php";
+                break;
+            case "work":
+                url = "work/form_update.php";
+                break;
+            case "work_item":
+            case "work_item_view":
+            case "work_item_re":
+            case "work_item_log": // 모두읽음설정
+                url = "work/item_form_update.php";
+                break;
+            case "work_cate": // 진단항목 우선순
+                url = "work/work_cate_form_update.php";
+                break;
+            case "item_info_plan_sort": // 진단항목 우선순
+                url = "item/item_form_update.php";
+                break;
+            case "stock_cate": // 진단항목 우선순
+                url = "order/stock_cate_form_update.php";
+                break;
+            case "stock_group_item": // 추가
+                url = "order/stock_group_form_update.php";
+                break;
+            case "dentist_cf_option_reset": // 리셋
+            case "cf_option": // 병원옵션 삭제
+                url = im_dentist_url + "/dentist_cf_option_form_update.php";
+                break;
+            case "patient_memo":
+            case "patient_memo_charting":
+            case "patient_memo_next":
+            case "patient_memo_re_memo":
+            case "patient_memo_ag_memo":
+            case "widget_patient_memo":
+            case "widget_patient_re_memo": // 진단메모
+            case "widget_patient_ag_memo": // 상담메모
+            case "widget_patient_memo_chatting": // 어랜지메모
+            case "widget_ag_list_table_memo":
+            case "widget_re_list_table_memo":
+                if (!params['patient_memo']) {
+                    alert("메모를 입력해 주세요!");
+                    return false;
+                }
+                url = "patient/patient_memo_form_update.php";
+                break;
+            case "widget_user_memo":
+                url = "user/user_memo_form_update.php";
+                break;
+            case "widget_dentist_memo":
+                url = "dentist/dentist_memo_form_update.php";
+                break;
+            case "patient_reserv_lock":
+                if (!confirm('[' + $title + '] 하시겠습니까?')) return false;
+                url = "reserv/reserv_list_update.php";
+                break;
+            default:
+                if (!url) {
+                    url = "performance/order_form_update.php";
+                }
+                break;
+        }
+        params['is_ajax'] = true;
+        console.log(url);
+        console.log(params);
+
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                // console.log(data);
+                if (data) {
+                    switch (type) {
+                        case "df_item":
+                        case "dentist_holiday":
+                            location.reload();
+                            break;
+                        case "reserve_form":
+                            switch (crudmode) {
+                                case "D":
+                                    if (params.is_dynamic == 'Y') {
+                                        try {
+                                            var reserve_idx = params.idx;
+                                            $("[data-reserve-idx='" + reserve_idx + "']").remove();
+                                            modal_close();
+                                        } catch (error) {}
+                                    } else {
+                                        location.reload();
+                                    }
+                                    break;
+                            }
+                            break;
+                        case "patient_memo":
+                        case "patient_memo_charting":
+                        case "patient_memo_next":
+                        case "patient_memo_re_memo":
+                        case "patient_memo_ag_memo":
+                        case "widget_patient_memo":
+                        case "widget_patient_re_memo": // 진단메모
+                        case "widget_patient_ag_memo": // 상담메모
+                        case "widget_ag_list_table_memo":
+                        case "widget_re_list_table_memo":
+                        case "widget_patient_memo_chatting": // 어랜지메모
+                            $("#" + type + " #patient_memo").val("");
+                            try {
+                                $("#" + form + " .note-editable").html("");
+                                $("#" + form + " .note-placeholder").show();
+                            } catch (e) {
+                                // console.log("편집기 입력폼 리셋 실패!")
+                            }
+                            break;
+                        case "patient_implement_check":
+                        case "consulting":
+                        case "consulting_form1":
+                        case "consulting_form2":
+                        case "patient_interview":
+                            fnAlert();
+                            break;
+                        case "patient_interview_custom":
+                            fnAlert();
+                            break;
+                        case "cure":
+                            im_notice("delete");
+                            break;
+                        case "plan":
+                        case "plan_item":
+                        case "plan_order":
+                        case "plan_item_order":
+                            fnLoadWidget("widget_plan_list"); // 계획재로드
+                            break;
+                        case "item_info_plan_sort":
+                            fnSectionAddtooth(); // 계획재로드
+                            break;
+                        case "stock_group_item":
+                            fnLoadWidget("widget_stock_group_item"); // 계획재로드
+                            fnLoadWidget("widget_stock_list"); // 계획재로드
+                            break;
+                        case "work":
+                            switch (crudmode) {
+                                case 'D':
+                                    location.href = data;
+                                    break;
+                                default:
+                                    location.reload();
+                                    break;
+                            }
+                            break;
+                        case "call":
+                            switch (crudmode) {
+                                case 'D':
+                                    location.reload();
+                                    break;
+                            }
+                            break;
+                        case "stock_cate":
+                            location.reload();
+                            break;
+                        case "work_item":
+                        case "work_item_view":
+                        case "work_item_re":
+                            fnLoadWidget("work_tiem_latest", 'work_tiem_latest');
+                            fnLoadWidget("widget_tab_work", 'widget_tab_work');
+                            fnLoadWidget("work_item_view", 'work_item_view');
+                            fnLoadWidget("share_load_container", 'work_tiem_latest');
+                            break;
+                        case "work_item_log":
+                            fnLoadWidget("widget_work_history_new", 'widget_work_history_new');
+                            break;
+                        case "recommendation_m":
+                            fnLoadWidget("widget_re_list_m");
+                            break;
+                        case "batch_item": // 간편상담 진단 진료저장
+                            fnLoadWidget("widget_re_list_s");
+                            break;
+                        case "result_amt":
+                            im_notice('저장 되였습니다.');
+                            break;
+                        default:
+                            if (event && typeof(eval(event)) == "function") {
+                                // console.log("이벤트 실행")
+                                eval(event);
+                            }
+                            break;
+                    }
+
+                    im_notice(notice_msg);
+
+                    if (event && typeof(eval(event)) == "function") {
+                        // console.log("이벤트 실행")
+                        eval(event);
+                    }
+                    if (trigger) {
+                        triggers = trigger.split(',');
+                        if (triggers.length) {
+                            $.each(triggers, function(index, value) {
+                                $(triggers[index]).trigger("click");
+                            });
+                        }
+                    }
+                    //문진표 삭제후 reload
+                    if (crudmode == 'D' && type == 'df_item_interview') {
+                        location.reload();
+                    }
+                } else {
+                    im_notice("error");
+                }
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }).on('click', '[data-toggle="fnPrint"]', function(e) {
+        var $this = $(this),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            is_modal = $this.data('is_modal'),
+            val = $this.val();
+        !type && alert('type 없습니다.');
+        if (is_modal) {}
+        switch (type) {
+            case "cure":
+                var url = "performance/cure_print.php";
+                break;
+            case "dailynote_day":
+            case "consulting": // 진단,동의 통합
+            case "consulting_re": // 진단
+            case "consulting_ag": // 진단
+                var url = "consulting/consulting_print.php";
+                break;
+            case "plan":
+            case "simple":
+            case "simple": //심플 치료계획
+            case "plan_ops": //수술 계획
+            case "briefing": //안내/브리핑
+            case "plan_inform":
+            case "plan_ops":
+                var url = "consulting/consulting_print.php";
+                break;
+            case "work_report_view": // 일일보고서 출력
+                var url = "work/work_report_print.php";
+                break;
+            case "board":
+                var url = "include/inc_print.php";
+                break;
+            case "interview": // 접수 문진
+                var url = "interview/print_interview.php";
+                break;
+        }
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        params['is_modal'] = 1;
+
+        log_modal(params); /////////////////////////////////////////////
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                if (is_modal) {
+                    $('#modalContentXl').html(data);
+                    $('#modalPopupXl').modal('show');
+                } else {
+                    $('#modalContentXl').html(data);
+                    $('#modalPopupXl').modal('show');
+                }
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }).on('click', '[data-toggle="fnSearchModal"]', function(e) {
+        var $this = $(this),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            container = $this.data('container'),
+            $target = $this.data('target') || $this.attr('href'),
+            val = $this.val();
+        $form = "";
+
+        form = $this.data('form');
+        form && $(form) && ($form = $(form).serializeArray());
+        !type && alert('type 없습니다.');
+        // console.log(type);
+        switch (type) {
+            case "company_list":
+                var url = "widget/widget_company_list.php";
+                break;
+            case "patient_item":
+                var url = "widget/widget_patient_item_value.php";
+                break;
+            case "stock_log":
+            case "item_value_stock_log": //행위 사용된 소모품
+                var url = "widget/widget_stock_log.php";
+                break;
+            default:
+                var url = "widget/" + type + ".php";
+                break;
+        }
+        $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        params['is_modal'] = 1;
+        params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        // console.log(params);
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                if (container) {
+                    $(container).html(data);
+                } else {
+                    $('#modalContentXl').html(data);
+                    $('#modalPopupXl').modal('show');
+                }
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }).on('click', '[data-toggle="fnSwhich"], fnSwhich', function(e) {
+        var $this = $(this),
+            val, type, swal, $class, action_str, $target, $tmp, $classes, column, $targets, params = {},
+            data = $this.data(),
+            val = $this.val(),
+            url = "patient/select_proc.php";
+        $this.data('column') && (column = $this.data('column'));
+        $this.data('type') && (type = $this.data('type'));
+        swal = $this.data('swal')
+        if (swal) {
+            alert(swal);
+            return false;
+        }
+
+        !$this.data('toggle') && ($this = $this.closest('[data-toggle="fnSwhich"]'));
+        $class = $this.data()['class'];
+        $target = $this.data('target') || $this.attr('href');
+        $class && ($tmp = $class.split(':')[1]) && ($classes = $tmp.split(','));
+        $target && ($targets = $target.split(','));
+        $targets && $targets.length && $.each($targets, function(index, value) {
+            ($targets[index] != '#') && $($targets[index]).toggleClass($classes[index]);
+        });
+        $this.toggleClass('active');
+
+        switch (type) {
+            case "arrange_status":
+                url = "patient/select_proc.php";
+                break;
+        }
+
+        switch (column) {
+            case "next_reserve_cuer_memo":
+                url = "patient/select_proc.php";
+                data['data'] = $("#" + column).val();
+                break;
+        }
+        /* 값전달 */
+        params['val'] = $this.hasClass('active') ? 'Y' : 'N';
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        // console.log(params);
+        // console.log(url);
+        // console.log(type);
+        // console.log(column);
+        if (type || column) {
+            url && $.ajax({
+                url: url,
+                type: "POST",
+                cache: false,
+                dataType: "text",
+                data: params,
+                success: function(data) {
+                    // console.log(data);
+                    if (data) {
+                        im_notice("적용 되었습니다.");
+                        switch (type) {
+                            case "arrange_status":
+                                try {
+                                    fnReloadArrange();
+                                } catch (e) {}
+                                break;
+                        }
+
+                        try {
+                            if (trigger) {
+                                trigger && (triggers = trigger.split(','));
+                                triggers.length && $.each(triggers, function(index, value) {
+                                    $(triggers[index]).trigger("click");
+                                    // console.log("trigger:" + triggers[index]);
+                                });
+                            }
+                        } catch (e) {}
+
+                        return true;
+                    } else {
+                        im_notice("error");
+                        return false;
+                    }
+
+                },
+                error: function(request, status, error) {
+                    var msg = "ERROR : " + request.status + "<br>"
+                    msg += +"내용 : " + request.responseText + "<br>" + error;
+                    // console.log(msg);
+                }
+            });
+        }
+    }).on('click', '[data-toggle="fnChangeReload"]', function(e) {
+        var $this = $(this),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            $form = $this.data('form'),
+            $target = $this.data('target') || $this.attr('href'),
+            val = $this.val();
+        var form = $($form).serializeArray();
+        !type && alert('type 없습니다.');
+        // console.log(type);
+        switch (type) {
+            case "stock_cate_select": // 재고분류카테
+                var url = "order/stock_cate_select.php";
+                break;
+        }
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        $.each(form, function() {
+            params[this.name] = this.value;
+        });
+        // console.log($target);
+        // console.log(form);
+        // console.log(params);
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                $($target).html(data);
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }).on('click', '.collapse-link', function(e) {
+        e.preventDefault();
+        var ibox = $(this).closest('div.ibox,section.ibox');
+        var button = $(this).find('i');
+        var content = ibox.children('.ibox-content');
+        content.slideToggle(200);
+        button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+        ibox.toggleClass('').toggleClass('border-bottom');
+        setTimeout(function() {
+            ibox.resize();
+            ibox.find('[id^=map-]').resize();
+        }, 50);
+    }).on('change', '[data-toggle="fnChangeUp"], .fnChangeUp', function(e) {
+        var $this = $(this),
+            $form = $this.data('form'),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            column = $this.data('column'),
+            $target = $this.data('target') || $this.attr('href'),
+            val = $this.val() || '',
+            checked = $this.prop("checked") || '',
+            crudmode = $this.data('crudmode');
+        $form && ($form = $($form).serializeArray());
+
+        var ex = ['parsleyField', 'parsleyFieldMultiple']
+        $.each(data, function(i, e) {
+            if ($.inArray(i, ex) < 0) {
+                params[i] = e;
+            }
+        });
+
+        params['is_ajax'] = true;
+        val && (params['value'] = val);
+        $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+
+        params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        params['checked'] = checked ? "Y" : "N";
+
+        // console.log(params);
+
+        if (!type)
+            type = column;
+
+        switch (type) {
+            case "work_status": // 상태변경
+                url = "work/item_form_update.php";
+                break;
+            case "next_reserve_cure_order_yn": // 어랜지 기공유무
+            case "next_reserve_cure_order_dt": // 어랜지 기공도착예상일
+            case "arrange_status": // 상태변경
+            case "doctor_tag": // 상태변경
+            case "cure_minute": // 예상시간
+            case "su_status": // 상담진행상태 변경
+            case "income_insurance_yn":
+                url = "patient/select_proc.php";
+                val && (params['data'] = val);
+                switch (val) {
+                    case '접수':
+                        if (confirm('접수정보 입력하시겠습니까? \n [취소]하시면 상태만 [' + val + ']로 변경됩니다.')) {
+                            fnModalForm(params);
+                            if (params.event && typeof(eval(params.event)) == "function") {
+                                eval(params.event);
+                            }
+                            return false;
+                        } else {
+                            // console.log("취소");
+                        }
+                        break;
+                    case '환자호출':
+                        if (params.chair_nm) {
+                            // console.log("환자호출시 위치:" + params.chair_nm);
+                        } else {
+                            if (confirm('체어를 선택하시겠습니까?')) {
+                                fnModalForm(params);
+                                if (params.event && typeof(eval(params.event)) == "function") {
+                                    eval(params.event);
+                                }
+                                return false;
+                            }
+                        }
+                        break;
+                    case '데스크호출':
+                        fnModalForm(params);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                url = "patient/select_proc.php";
+                val && (params['data'] = val);
+                break;
+        }
+        // console.log("fnChangeUp:");
+        // console.log(url);
+        // console.log(params);
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "json",
+            success: function(data) {
+                // console.log(data);
+                switch (type) {
+                    case "arrange_status": // 상태변경
+                    case "next_reserve_cure_order_yn": // 기공유무체크
+                    case "doctor_tag": // 상태변경
+                        if (data) {
+                            if (data.result == 'suc') {
+                                im_notice('저장 되였습니다.');
+                                if (params.event && typeof(eval(params.event)) == "function") {
+                                    eval(params.event);
+                                } else {
+                                    try {
+                                        if (!trigger) {}
+                                    } catch (e) {}
+                                }
+                            } else {
+                                if (data.error) {
+                                    alert(data.error)
+                                } else {
+                                    alert("저장실패!")
+                                }
+                                // console.log("error:" + data.error);
+                                if (params.event && typeof(eval(params.event)) == "function") {
+                                    eval(params.event);
+                                } else {
+                                    try {
+                                        if (!trigger) {}
+                                    } catch (e) {}
+                                }
+                            }
+                        } else {
+                            alert("저장실패!\n data 값이 없습니다.")
+                        }
+                        break;
+                    default: // 항목삭제
+                        if (data) {
+                            im_notice("save");
+                            return true;
+                        } else {
+                            return false;
+                            im_notice("error");
+                        }
+                        break;
+                }
+
+            },
+            error: function(request, status, error) {
+                // console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on('change', '.changeVaule', function(e) {
+        var $val = $(this).data('target');
+        var $target = $(this).val();
+        // console.log($target);
+        // console.log($val);
+        $val && $target && $($target).val($val);
+    }).on('close.bs.alert', '.alert-dismissable', function() {
+        var $this = $(this),
+            data = $this.data(),
+            url = $this.data('url'),
+            title = $this.data('title'),
+            crudmode = $this.data('crudmode'),
+            type = $this.data('type');
+        success = false,
+            params = {},
+
+            !crudmode && (crudmode = "D");
+        // console.log($this.data);
+
+        switch (type) {
+            case "reserve_apply_yn":
+                var confirm_msg = '확인처리 하겠습니까?';
+                break;
+            default:
+                if (title) {
+                    var confirm_msg = title + '하시겠습니까?';
+                } else {
+                    var confirm_msg = '삭제 하시겠습니까?';
+                }
+                break;
+        }
+        if (type) {
+            if (confirm(confirm_msg)) {
+                switch (type) {
+                    case "reserve_apply_yn":
+                        url = "reserv/reserv_form_update.php";
+                        break;
+                    case "sms_temp":
+                        var url = "sms/template_form_update.php";
+                        break;
+                    case "kakao_template":
+                        var url = "kakaoSend/kakao_template_update.php";
+                        break;
+                    case "patient_record_log":
+                        var url = "patient/patient_record_log_update.php";
+                        break;
+                    case "patient_memo":
+                        var url = "patient/patient_memo_form_update.php";
+                        break;
+                    case "item_info_user":
+                        var url = "item/item_form_update.php";
+                        break;
+                    case "cure":
+                    case "plan_item":
+                    case "plan_user":
+                    case "recommendation":
+                        url = im_consulting_url + "/item_form_update.php";
+                        break;
+                    case "board_view_log":
+                        url = im_notice_url + "/form_update.php";
+                        break;
+                    case "work":
+                        url = im_work_url + "/form_update.php";
+                        break;
+                    case "work_item":
+                        url = im_work_url + "/item_form_update.php";
+                        break;
+                    case "stock_cate": // 진단항목 우선순
+                        url = im_order_url + "/stock_cata_form_update.php";
+                        break;
+                    case "cf_option": // 병원옵션 삭제
+                        url = im_dentist_url + "/dentist_cf_option_form_update.php";
+                        break;
+                    case "patient_memo_list":
+                        url = "patient/patient_memo_form_update.php";
+                        break;
+                    case "widget_user_memo_list":
+                        url = "user/user_memo_form_update.php";
+                        break;
+                    case "widget_dentist_memo":
+                        url = "dentist/dentist_memo_form_update.php";
+                        break;
+                    case "board_file": // 파일
+                        url = "../board_file/form_update.php";
+                        break;
+                }
+            } else {
+                return false;
+            }
+            $.each(data, function(i, e) {
+                params[i] = e;
+            });
+            crudmode && (params['crudMode'] = crudmode);
+            params['is_ajax'] = true;
+            // console.log("url:" + url);
+            // console.log(params);
+            url && $.ajax({
+                url: url,
+                type: "POST",
+                cache: false,
+                dataType: "text",
+                data: params,
+                async: false,
+                success: function(data) {
+                    // console.log("data:" + data);
+                    success = data;
+                    switch (type) {
+                        case "stock_cate":
+                            location.reload();
+                            break;
+                        case "recommendation":
+                            fnLoadWidget("widget_re_list_s");
+                            fnLoadWidget("widget_re_list_m");
+                            break;
+                        case "cure":
+                            fnReloadArrange();
+                            break;
+                        case "plan":
+                        case "plan_item":
+                        case "plan_order":
+                        case "plan_item_order":
+                        case "plan_user":
+                            fnLoadWidget("widget_plan_list"); // 계획재로드
+                            break;
+                        default: // 항목삭제
+                            break;
+                    }
+                },
+                error: function(request, status, error) {
+                    var msg = "ERROR : " + request.status + "<br>"
+                    msg += +"내용 : " + request.responseText + "<br>" + error;
+                    // console.log(msg);
+                }
+            });
+            // console.log("success" + success);
+            if (success != '0') {
+                im_notice("delete");
+                return true;
+            } else {
+                im_notice("error");
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }).on('click ', '[data-toggle="fnExcel"]', function(e) {
+        var $this = $(this),
+            url = $this.data('url'),
+            $form,
+            serialize,
+            params = {},
+            data = $this.data(),
+            search_date = $this.data('search_date'),
+            type = $this.data('type'),
+            form = $this.data('form') ? $this.data('form') : "#searchform";
+        val = $this.val();
+        form && $(form) && ($form = $(form).serializeArray());
+        search_date = search_date ? search_date : "";
+        val && (params['val'] = val);
+        type = type ? type : url;
+        serialize = $(form).serialize();
+        switch (type) {
+            case "overtime_list":
+                url = "personnel/" + type + ".php?is_excel=Y&search_date=" + search_date + "&" + serialize;
+                break;
+            case "introducer_01":
+            case "introducer_02":
+                url = "patient/" + type + ".php?is_excel=Y&search_date=" + search_date + "&" + serialize;
+                break;
+            case "requests_list":
+                url = "call/" + type + ".php?is_excel=Y&search_date=" + search_date + "&" + serialize;
+                break;
+            case "deposit_list":
+                url = "deposit/" + type + ".php?is_excel=Y&search_date=" + search_date + "&" + serialize;
+                break;
+            case "dailynote":
+                url = "deposit/" + type + ".php?is_excel=Y&search_date=" + search_date + "&" + serialize;
+                break;
+            default:
+                var strRegex = '^((https|http|ftp|rtsp|mms)?://)';
+                var is_url = new RegExp(strRegex).test(url);
+                // console.log(is_url);
+                if (is_url) {
+                    url = url + "?is_excel=Y&search_date=" + search_date + "&" + serialize;
+                } else {
+                    url = "https://dev.denb.co.kr" + url + "?is_excel=Y&search_date=" + search_date + "&" + serialize;
+                }
+                break;
+        }
+
+        /* params['export_url'] = url;
+        url && $.ajax({
+            url: "main/excel_export_form.php",
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        }); */
+        params['field'] = $this.data('field') || val,
+            params['get_title'] = $this.attr('title'),
+            params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        params['is_excel'] = 'Y';
+        location.href = url;
+
+    }).on('click', '[data-toggle="pill"]', function(e) {
+        var $this = $(this),
+            $tab_container = $this.parents('.tabs-container').attr('id'),
+            $tab_id = $this.data('tab_id'),
+            $filter_key = $this.data('filter_key'),
+            $tab_content = $this.parents('.tabs-container').find('#tabItem');
+        $tab_id && $tab_container && $tab_content && fnLoadWidget($tab_container + " #tabItem", $tab_id, $filter_key);
+    }).on('click', "[data-toggle='fnSelectChange']", function(e) {
+        var data = {},
+            url = im_patient_url + "/select_proc.php",
+            event, val, event_param;
+        val = $(this).val();
+        $title = $(this).attr('title'),
+            val && (data['data'] = val);
+        $.each($(this).data(), function(i, e) {
+            data[i] = e;
+        });
+        event = $(this).data('event');
+        event_param = $(this).data('event_param');
+        switch (val) {
+            case "진료완료":
+                // console.log("진료완료 액션을 넣으세요");
+                break;
+        }
+
+                    // 실행여부
+            if (data.confirm && $title) {
+                if (!confirm($title + " 하시겠습니까?")) {
+                    return false;
+                }
+            }
+        
+        // console.log(data);
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: data,
+            dataType: "text",
+            success: function(data) {
+                // console.log(data);
+                im_notice('저장되였습니다.');
+                event && event_param && (eval(event + "(" + event_param + ")"));
+                event && (eval(event));
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on('click', '[data-toggle="send_user"]', function(e) {
+        var obj = $(this);
+        var idx = obj.data('idx');
+        var patient_idx = obj.data('patient_idx');
+        var no = obj.data('no');
+        var params = {
+            patient_idx: patient_idx ? patient_idx : '',
+            no: no ? no : '',
+            is_ajax: 1,
+        };
+        // console.log(params);
+        $.ajax({
+            url: "../send/send_user_form.php",
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalPopupXl').modal('show');
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on('change', '[data-toggle="table_form_select"]', function(e) {
+        var $this = $(this),
+            form = $this.data('form'),
+            params = {},
+            data = $this.data(),
+            $target = $this.data('target') || $this.attr('href'),
+            idx = $this.val(),
+            event = $this.data('event'),
+            $eval = $this.data('eval'); // 실행전 처리 함수
+        $eval && ($eval = $eval + "()"); // 실행전 처리 함수
+        form && ($form = $("form#" + form).serializeArray());
+        $.each(data, function(i, e) {
+            if (jQuery.inArray(i, data_exclude) < 0) {
+                params[i] = e;
+            }
+        });
+        params['idx'] = idx;
+        var idx = $(this).val();
+        // console.log(params);
+        $.ajax({
+            url: "notice/ajax.form.json2.php",
+            type: "POST",
+            cache: false,
+            dataType: "json",
+            data: params,
+            success: function(data) {
+                // console.log(data);
+                var contents = data.contents;
+                contents && $("#" + $target).summernote("editor.pasteHTML", contents);
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on('click', '[data-toggle="fnSendKakao"]', function(e) {
+        // 알림톡 수동발송
+        var $this = $(this),
+            $form = $this.data('form'),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            $target = $this.data('target') || $this.attr('href'),
+            val = $this.val(),
+            crudmode = $this.data('crudmode');
+        $form && ($form = $($form).serializeArray());
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        params['is_ajax'] = true;
+        val && (params['value'] = val);
+        $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+        var url = "kakaoSend/ajax.alimtalk.php";
+        params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        switch (type) {
+            case "데스크호출":
+                // 발송내역유무 판단
+                if (params.send_idx > 0) {
+                    if (!confirm("재발송 하시겠습니까?")) {
+                        return false;
+                    }
+                }
+                var pay_area = $('#pay_area').val(); // 마감위치
+                if (!pay_area) {
+                    alert("마감위치를 선택하세요");
+                    return false;
+                }
+                params['pay_area'] = pay_area;
+                url = "kakaoSend/ajax.alimtalk.php";
+                break;
+            case "설문지알림톡발송":
+                var patient_idx = $this.data('patient_idx'),
+                    dentist_idx = $this.data('dentist_idx');
+                params['dentist_form_idx'] = $('#dentist_form_idx').val();
+                url = "kakaoSend/ajax.alimtalk.php";
+                break;
+            default:
+                const patient_nm = $this.data('patient_nm');
+                if (patient_nm) {
+                    if (!confirm(patient_nm + "님께 알림톡 발송 하시겠습니까?")) {
+                        return false;
+                    }
+                    break;
+                }
+                if (!confirm("알림톡 발송 하시겠습니까?")) {
+                    return false;
+                }
+                break;
+        }
+        // console.log("fnSendKakao:");
+        // console.log(url);
+        // console.log(params);
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "json",
+            // dataType: "text",
+            success: function(data) {
+                // console.log(data);
+                switch (type) {
+                    case "데스크호출": // 상태변경
+                        if (data) {
+                            if (data.result == 'suc') {
+                                $this.prop('disabled', true); // 재발송 금지
+                                fnAlert("발송 되였습니다.");
+                                if (params.event && typeof(eval(params.event)) == "function") {
+                                    eval(params.event);
+                                } else {
+                                    try {
+                                        if (!trigger) {}
+                                    } catch (e) {}
+                                }
+                            } else {
+                                if (data.error) {
+                                    alert(data.error)
+                                } else {
+                                    alert("저장실패!")
+                                }
+                                // console.log("error:" + data.error);
+                                if (params.event && typeof(eval(params.event)) == "function") {
+                                    eval(params.event);
+                                } else {
+                                    try {
+                                        if (!trigger) {}
+                                    } catch (e) {}
+                                }
+                            }
+                        } else {
+                            alert("저장실패!\n data 값이 없습니다.")
+                        }
+                        break;
+                    case "설문지알림톡발송": // 설문지알림톡발송
+                        if (data) {
+                            if (data.result == 'suc') {
+                                $this.prop('disabled', true); // 재발송 금지
+                                fnAlert("발송 되였습니다.");
+                                if (params.event && typeof(eval(params.event)) == "function") {
+                                    eval(params.event);
+                                } else {
+                                    try {
+                                        if (!trigger) {}
+                                    } catch (e) {}
+                                }
+                            } else {
+                                if (data.error) {
+                                    alert(data.error)
+                                } else {
+                                    alert("저장실패!")
+                                }
+                                // console.log("error:" + data.error);
+                                if (params.event && typeof(eval(params.event)) == "function") {
+                                    eval(params.event);
+                                } else {
+                                    try {
+                                        if (!trigger) {}
+                                    } catch (e) {}
+                                }
+                            }
+                        } else {
+                            alert("저장실패!\n data 값이 없습니다.")
+                        }
+                        break;
+                    default: // 항목삭제
+                        if (data.result == 'suc') {
+                            fnAlert("알림톡 발송 되였습니다.");
+                            if (params.event && typeof(eval(params.event)) == "function") {
+                                eval(params.event);
+                            } else {
+                                try {
+                                    if (!trigger) {}
+                                } catch (e) {}
+                            }
+                        } else {
+                            if (data.error) {
+                                fnAlert(data.error, "error");
+                            } else {
+                                alert("발송실패!")
+                            }
+                            // console.log("error:" + data.error);
+                            if (params.event && typeof(eval(params.event)) == "function") {
+                                eval(params.event);
+                            } else {
+                                try {
+                                    if (!trigger) {}
+                                } catch (e) {}
+                            }
+                        }
+                        break;
+                }
+            },
+            error: function(request, status, error) {
+                // console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on('click', '[data-toggle="fnItemForm"]', function(e) {
+        var $this = $(this);
+        var data = $this.data();
+        var params = {};
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        params.is_ajax = true;
+        log_modal(params); /////////////////////////////////////////////
+        fnTeethAdd_new(params);
+    }).on('click', '.trigger', function(e) {
+        var $this = $(this);
+        var target = $this.data('target');
+        target && $(target).trigger("click");
+    }).on('click', '[data-toggle="fnSortForm"], .fnSortForm', function(e) {
+        var $this = $(this),
+            url, $form,
+            params = {},
+            hiddenevent = $this.attr("data-hiddenevent"),
+            trigger = $this.data('trigger'),
+            data = $this.data(),
+            type = $this.data('type'),
+            container = $this.data('container'),
+            form = $this.data('form');
+        w = $this.data('w'),
+            is_dual = $this.data('is_dual'),
+            val = $this.val();
+        var modalPopup = $this.parents(".modal").attr('id');
+        var modalConten = $this.parents(".modal-dialog").attr('id');
+        form && $(form) && ($form = $(form).serializeArray());
+        hiddenevent = hiddenevent ? hiddenevent : "";
+        trigger = trigger ? trigger : "";
+        switch (type) {
+            case "denb_menu":
+                var url = "adm/denb_menu_sort_form.php";
+                break;
+            case "agree": // 상담동의 순선변경
+                var url = "consulting/item_sort_form.php";
+                break;
+            case "sort_form_modal": // 순서변경
+                var url = "common/sort_form_modal.php";
+                break;
+            default:
+                url = type + "_sort_form.php";
+                break;
+        }
+        $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        val && (params['val'] = val);
+        params['field'] = $this.data('field') || val,
+            params['get_title'] = $this.attr('title'),
+            params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        params['is_modal'] = 1;
+        log_modal(params); /////////////////////////////////////////////
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                var mc = $('#modalContentSm');
+                var mp = $('#modalPopupSm');
+                switch (type) {
+                    case "work_item":
+                        /* fnReloadWorkC();
+                        fnReloadWorkR(); */
+                        break;
+                }
+                if (modalPopup) {
+                    $('#' + modalConten).attr("data-trigger", trigger);
+                    $('#' + modalConten).attr("data-hiddenevent", hiddenevent);
+                    $('#' + modalConten).html(data);
+                } else {
+                    mc.attr("data-trigger", trigger);
+                    mc.attr("data-hiddenevent", hiddenevent);
+                    mc.html(data);
+                    mp.modal('show');
+                }
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }).on('click', '.alert_temp', function(e) {
+        alert("개발중 입니다.");
+    }).on('click', "[data-toggle='fnModalManual']", function(e) {
+        // 매뉴얼
+        var $this = $(this),
+            params = {},
+            data = $this.data(),
+            type = $this.data('type'),
+            field = $this.data('field'),
+            val = $this.val(),
+            url = "include/modal_manual.php";
+        $.each(data, function(i, e) {
+            params[i] = e;
+        });
+        var hiddenevent = params['hiddenevent'] ? params['hiddenevent'] : "";
+        var trigger = params['trigger'] ? params['trigger'] : "";
+        // console.log(params);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                var mc = $('#modalContentXl');
+                var mp = $('#modalPopupXl');
+                mc.attr("data-trigger", trigger);
+                mc.attr("data-hiddenevent", hiddenevent);
+                mc.html(data);
+                mp.modal('show');
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on('click', '.right-sidebar-toggle', function(e) {
+        e.preventDefault();
+        $('#right-sidebar').toggleClass('sidebar-open');
+    }).on('click', '[data-toggle="fnFormUpdata"]', function(e) {
+        var $this = $(this),
+            params = {},
+            data = $this.data(),
+            form = $this.data('form'),
+            $form,
+            url = $this.data('url'),
+            type = $this.data('type'),
+            $target = $this.data('target') || $this.attr('href'),
+            val = $this.val() || '',
+            event = $this.data('event') || "",
+            trigger = trigger = $this.data('trigger') || "",
+            triggers = [],
+            crudmode = $this.data('crudmode') || "";
+
+        form && ($form = $(form).serializeArray());
+        $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+        console.log(params);
+
+        $.each(data, function(i, e) {
+            if ($.inArray(i, e) < 0) {
+                params[i] = e;
+            }
+        });
+
+        params['is_ajax'] = true;
+        params['crudmode'] && (params['crudMode'] = params['crudmode']);
+        params['act_button'] = document.pressed || "";
+
+        /* console.log("fnFormUpdata:");
+        console.log(url); */
+        url && $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                if (data) {
+                    if (data.status == 'y') {
+                        if (data.msg) {
+                            alert(data.msg)
+                        } else {
+                            alert("저장성공!")
+                        }
+                        try {
+                            switch (event) {
+                                case "reload":
+                                    location.reload();
+                                    break;
+                                case "modal_close":
+                                    modal_close();
+                                    break;
+                                default:
+                                    event && (eval(event));
+                                    break;
+                            }
+                            if (trigger) {
+                                trigger && (triggers = trigger.split(','));
+                                triggers.length && $.each(triggers, function(index, value) {
+                                    $(triggers[index]).trigger("click");
+                                });
+                            }
+                        } catch (e) {}
+                    } else {
+                        if (data.msg) {
+                            alert(data.msg)
+                        } else {
+                            alert("저장실패!")
+                        }
+                    }
+                } else {
+                    alert("저장실패!\n data 값이 없습니다.")
+                }
+
+            },
+            error: function(request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }).on("click", "[data-toggle='check_all']", function(e) {
+        var $this = $(e.target),
+            target, $targets;
+        target = $this.data('target');
+        document.chk = e.target.checked;
+        $targets = $this.parents('form');
+        $targets && target && $.each($targets.find("input:checkbox[name^='" + target + "']"), function(i, e) {
+            e.checked = document.chk;
+        });
+    });
+    $('.navbar-minimalize').on('click', function(e) {
+        var cookie_body_class = get_cookie("cookie_body_class");
+        // console.log(cookie_body_class);
+        if (cookie_body_class)
+            set_cookie("cookie_body_class", "", 10000);
+        else
+            set_cookie("cookie_body_class", "mini-navbar", 10000);
+    });
+    $('#multi_seach_btn').on('click', function(e) {
+        var html = $("#multi_search_container").html();
+        // console.log(html);
+        // console.log("html");
+        if (html == "") {
+            fnLoadWidget("multi_search_container", "multi_search");
+        }
+    });
+
+    //실시간 모니터링
+    $('.alarmLayer-all, .alarmLayer-miss').on('click', function(e) {
+        var type = $(this).data('type');
+            });
+
+    // 모니터링 체크
+    var _cf_monitor_setinterval_time = 5000; // 3초
+    var int = self.setInterval("denbMonitor()", _cf_monitor_setinterval_time);
+
+    function denbMonitor() {
+        var today = new Date();
+        var hours = today.getHours();
+        if (hours < 6 && hours > 0) {
+            return false;
+        }
+        var params = {
+            dentist_idx: im_dentist_idx,
+            cf_group_idx: im_cf_group_idx,
+            user_id: im_user_id,
+        }
+
+        
+
+        $.post(("include/moniter.php"), params).done(function(data) {
+            data && (obj = $.parseJSON(data)); // json obj
+            // console.log("모니터링:");
+            // console.log(obj);
+            if (obj != null) {
+                // 현재 버전 체크
+                // 버전 차이 있으면 리셋
+                if (obj.work != null) {
+                    if (obj.work.result == "reload") {
+                        if (obj.work.cnt > 0) {
+                            $(".navbar-top-links #head_work_counting").html(obj.work.cnt).show();
+                        } else {
+                            $(".navbar-top-links #head_work_counting").html(obj.work.cnt).hide();
+                        }
+                    }
+                }
+
+                if (obj.msg != null) {
+                    if (obj.msg.result == "reload") {
+                        //fnUserMassegeLatest();
+                    }
+                }
+
+                /* if (obj.arrange.patient_idx != null) {
+                    var title = "[ " + obj.arrange.patient_nm + " ] 님 안녕하세요";
+                    title = title + "<br>";
+                    title = title + "<br>치료받는 도중 불편한것이 있으시면";
+                    title = title + "<br>카카오톡 진료확인표에 문의를 꼭 남겨주세요.";
+                    title = title + "<br>";
+                    title = title + "<br>곧 디지털 시스템진료를 시작하겠습니다.";
+                    title = title + "<br>";
+                    title = title + "<br>AI 자동 맞춤된 치료컨텐츠는 내 진료와 연계된";
+                    title = title + "<br>내용으로 구성되어 있습니다";
+                    title = title + "<br>";
+                    title = title + "<br>진료전 필수확인!";
+                    var text = "<button class='btn btn-info m-0' data-toggle=\"fnModalForm\" data-patient_idx=\"" + obj.arrange.patient_idx + "\" data-no=\"" + obj.arrange.no + "\" data-type=\"widget_tab_patient_order\" data-tab_id=\"widget_patient_implement_ag\">내 진료컨텐츠 바로가기</button>";
+                    swal({
+                            html: true,
+                            title: title,
+                            text: text,
+                            contentt: text,
+                            type: "warning",
+                            // timer: 30000,
+                            confirmButtonText: "포스트잇 바로 확인하기",
+                            cancelButtonText: "다시 확인 안하기",
+                            closeOnConfirm: false,
+                            showCancelButton: true,
+                        },
+                        function(isConfirm) {
+                            swal.close();
+                            // console.log(isConfirm);
+                            if (isConfirm == false) {
+                                // 체어 확인 수정
+                                fnSelectChange(obj.arrange.idx, obj.arrange.idx, 'chair_confirm_yn');
+                            }
+                            if (isConfirm == true) {
+                                // 다시확인 안하기
+                                fnSelectChange(obj.arrange.idx, obj.arrange.idx, 'chair_confirm_yn');
+                                var params = {};
+                                params.patient_idx = obj.arrange.patient_idx;
+                                params.regist_dt = obj.arrange.regist_dt;
+                                params.no = obj.arrange.no;
+                                params.type = 'widget_tab_patient_order';
+                                params.tab_id = 'arrange_postit';
+                                // console.log(params);
+                                fnModalForm(params);
+                            }
+                        }
+                    );
+                } */
+
+                // 신규 환자 메모가 있을시 파업창 자동 켜기
+                if (obj.arrange.patient_memo_cnt != null) {
+                    try {
+                        if (obj.arrange.patient_memo_cnt > 0) {
+                            if ($('#small-chat').is('.active')) {
+                                fnLoadWidget("widget_patient_memo_chatting_list_small");
+                                $('#pateint_memo_log_cnt').html("0");
+                            } else {
+                                $('#pateint_memo_log_cnt').html(obj.arrange.patient_memo_cnt);
+                                $('#pateint_memo_log_cnt').addClass("badge-danger");
+                                $('#pateint_memo_log_cnt').removeClass("badge-white");
+                            }
+                        } else {
+                            $('#pateint_memo_log_cnt').html(obj.arrange.patient_memo_cnt);
+                            $('#pateint_memo_log_cnt').removeClass("badge-danger");
+                            $('#pateint_memo_log_cnt').addClass("badge-white");
+                        }
+                    } catch (e) {
+                        // console.log("error:denbMonitor")
+                    }
+                }
+
+                // 실시간 사이트관리 체크
+                if (obj.arrange.count_label != null) {
+                    try {
+                        $.each(obj.arrange.count_label, function(i, v) {
+                            // console.log(".count_label-" + i + " / " + v);
+                            var o = $(".count_label-" + i).find('.label');
+                            var b = $(".count_label-" + i).find('.badge');
+                            var so = $(".right-sidebar-" + i).find('.label');
+                            var sb = $(".right-sidebar-" + i).find('.badge');
+                            if (v > 0) {
+                                o.removeClass('hidden').text(v).show();
+                                b.removeClass('hidden').text(v).show();
+                                so.removeClass('hidden').text(v).show();
+                                sb.removeClass('hidden').text(v).show();
+                            } else {
+                                o.addClass('hidden').text('').hide();
+                                b.removeClass('hidden').text(v).hide();
+                                so.removeClass('hidden').text(v).hide();
+                                sb.removeClass('hidden').text(v).hide();
+                            }
+                        })
+                    } catch (e) {
+                        // console.log("error:denbMonitor")
+                    }
+                }
+
+                // 파업고지
+                try {
+                    var notify_cnt = obj.notification.arrange.cnt;
+                    if (notify_cnt > 0) {
+                        var audio = new Audio('../aws_voice/notify.wav');
+                        audio.play();
+                        var rows = obj.notification.arrange.row;
+                        $.each(rows, function(i, v) {
+                            var set_options = {};
+                            // console.log(v);
+                            set_options.title = v.patient_title;
+                            set_options.description = v.description;
+
+                            v.type && (set_options.type = v.type);
+                            v.status && (set_options.status = v.status);
+                            v.closeTimeout && (set_options.closeTimeout = v.closeTimeout);
+                            v.patient_idx && (set_options.patient_idx = v.patient_idx);
+                            v.no && (set_options.no = v.no);
+                            // console.log(set_options);
+
+                            im_notification(set_options);
+                        })
+                    }
+                } catch (e) {
+                    // console.log("error:notify_cnt")
+                }
+            }
+        });
+    };
+
+    function fnSearchForm(obj) {
+        var tab_id = $('#tab_id').val();
+        var sp = $(obj).attr('value');
+        var search_id = $(obj).attr('name');
+        // console.log(search_id);
+        // console.log(sp);
+        switch (search_id) {
+            case "search_consulting_option":
+                sp && $('#search_consulting_option').val(sp);
+                break;
+            case "search_status":
+                sp && $('#search_status').val(sp);
+                break;
+            case "search_arrange_option": //접수목록
+                sp && $('#search_arrange_option').val(sp);
+                break;
+            default:
+                sp && $('#search_item_option').val(sp);
+                break;
+        }
+        $('#searchform').submit();
+    }
+
+    function fnSearch(obj, target) {
+        var sp = $(obj).attr('value');
+        target && (target = $(target));
+        $('#searchform #page').val(1);
+        if (target) {
+            sp && target.val(sp);
+        } else {
+            sp && $('#search_item_option').val(sp);
+        }
+        $('#searchform').submit();
+    }
+
+    function fnSearchWriteForm(url) {
+        $('#writeForm').attr('action', url);
+        $('#writeForm').submit();
+    }
+
+    function fnAlert(msg, type, text, link, event) {
+        var d_text = "3초후 자동 꺼짐";
+        var text = text ? text : d_text;
+        switch (msg) {
+            case "modify":
+                msg = "업데이트 되었습니다.";
+                break;
+            case "delete":
+                msg = "삭제 되었습니다.";
+                break;
+            case "error":
+                msg = "오류가 있습니다.";
+                type = "error";
+                break;
+            default:
+                msg = msg ? msg : "저장 되었습니다."
+                break;
+        }
+        swal({
+                title: msg,
+                text: text,
+                type: type,
+                timer: 3000,
+                confirmButtonText: "확인",
+                cancelButtonText: "취소",
+            },
+            function(isConfirm) {
+                // console.log(isConfirm);
+                switch (type) {
+                    case "success":
+                    case "warning":
+                        // modal grigger 값이 있으면 실행
+                        var modal_show = $("div.modal.show .modal-dialog");
+                        if (modal_show.data('trigger')) {
+                            modal_close();
+                        } else {
+                            if (event) {
+                                eval(event);
+                                swal.close();
+                            } else if (link) {
+                                location.href = link;
+                            } else {
+                                location.reload();
+                            }
+                        }
+                        swal.close();
+                        break;
+                    case "error":
+                        swal.close();
+                        break;
+                    default:
+                        swal.close();
+                        break;
+                }
+            }
+        );
+    }
+
+    function fnSweetAlert(userParams) {
+        var title = userParams.title;
+        switch (userParams.type) {
+            case "update":
+                title = "업데이트 되었습니다.";
+                break;
+            case "modify":
+                title = "수정 되었습니다.";
+                break;
+            case "delete":
+                title = "삭제 되었습니다.";
+                break;
+            case "error":
+                title = "저장 실패!";
+                break;
+            case "fail":
+                title = "저장 실패!";
+                break;
+            default:
+                title = title ? title : "저장 되었습니다."
+                break;
+        }
+
+        var defaultParams = {
+            title: title,
+            text: "3초후 자동 꺼짐",
+            type: "",
+            timer: 3000,
+            confirmButtonText: "확인",
+            cancelButtonText: "취소",
+        }
+        userParams && $.extend(defaultParams, userParams);
+        // console.log(defaultParams);
+
+        swal(defaultParams,
+            function(isConfirm) {
+                swal.close();
+                var type = defaultParams.type;
+                var event = defaultParams.event;
+                var trigger = defaultParams.trigger;
+                var link = defaultParams.link;
+                if (type != 'error') {
+                    switch (event) {
+                        case "reload":
+                            location.reload();
+                            break;
+                        case "modal_close":
+                            modal_close();
+                            break;
+                        default:
+                            event && (eval(event));
+                            break;
+                    }
+                    if (trigger) {
+                        trigger && (triggers = trigger.split(','));
+                        triggers.length && $.each(triggers, function(index, value) {
+                            $(triggers[index]).trigger("click");
+                        });
+                    }
+                    if (link) {
+                        location.href = link;
+                    }
+                }
+            }
+        );
+    }
+    // 전체화면 로딩용
+    function sweetLoding(msg, event) {
+        var title = '로딩중입니다.';
+        msg && (title = msg);
+        swal({
+            title: msg,
+            text: "잠시만 기다려 주세요",
+            type: "",
+            animation: false, // 애니메이션
+            showConfirmButton: false,
+            showCancelButton: false
+        });
+    }
+
+    function sweetConfirm(msg, event) {
+        swal({
+                title: msg,
+                type: "warning",
+                confirmButtonText: "확인",
+                cancelButtonText: "취소",
+                showCancelButton: true,
+                closeOnConfirm: false,
+            },
+            function(sweetConfirm_value) {
+                if (event && sweetConfirm_value) {
+                    try {
+                        event && (eval(event));
+                        return true;
+                    } catch (error) {
+                        console.error("sweetConfirm() error:", "event is not defined");
+                    }
+                } else {
+                    swal.close();
+                    return false;
+                }
+            });
+    }
+
+    function sweetAlert3(msg, type, text, link, event) {
+        var d_text = "10초후 자동 꺼짐";
+        var text = text ? text : d_text;
+        switch (msg) {
+            case "modify":
+                msg = "업데이트 되었습니다.";
+                break;
+            case "delete":
+                msg = "삭제 되었습니다.";
+                break;
+            case "error":
+                msg = "오류가 있습니다.";
+                type = "error";
+                break;
+            default:
+                msg = msg ? msg : "저장 되었습니다."
+                break;
+        }
+        swal({
+                title: msg,
+                text: text,
+                type: type,
+                timer: 10000,
+                confirmButtonText: "확인",
+                cancelButtonText: "취소",
+                showCancelButton: false,
+                closeOnConfirm: false,
+            },
+            function(isConfirm) {
+                // console.log(isConfirm);
+                switch (type) {
+                    case "success":
+                        swal.close()
+                        break;
+                    case "warning":
+                        if (link) {
+                            location.href = link;
+                        } else {
+                            location.reload();
+                        }
+                        break;
+                    case "error":
+                        swal.close()
+                        break;
+                    default:
+                        swal.close()
+                        break;
+                }
+            }
+        );
+    }
+
+    // 치식번호 체크패널
+    function tooth_check_panel(container) {
+        $('.tooth_check_panel_container').html('');
+        container && fnLoadWidget(container, "inc_toothlist_check");
+    }
+
+    var clipboard = new Clipboard('.clipboard_btn');
+    clipboard.on('success', function(e) {
+        var $this = $(e.trigger);
+        var to = $this.data('clipboard-to');
+        if (to) {
+            var p = $(to).prop('selectionStart');
+            var to_val = $(to).val();
+            var text = e.text;
+            if (p > 0 && to_val != '')
+                $(to).val(to_val.substr(0, p) + text + to_val.substr(p) + " ");
+            else
+                $(to).val(to_val + text + " ");
+            $(to).focus();
+        } else {
+            alert("클립보드에 복사 되었습니다.");
+        }
+    }).on('error', function(e) {
+        alert("복사실패. Ctrl + C 를 눌러서 복사해 주세요.");
+    });
+
+    $('#search_no_common').change(function() {
+        var no = this.value;
+        var search_no = this.value;
+        !no && (search_no = 'all');
+        !no && (no = '');
+        location.href = "/call/popup_requests_form.php?patient_idx=&no=" + no + "&search_no=" + search_no + "&page=";
+    });
+
+    function log_modal(obj) {
+        var type = obj.type;
+        var tab_id = obj.tab_id;
+        var back_no = obj.back_no;
+
+        if (type && obj) {
+            var modal_log = "";
+            var gjo = obj ? $.parseJSON(JSON.stringify(obj)) : "";
+            var cjs = get_cookie('modal_log');
+            var cjo = cjs ? $.parseJSON(cjs) : "";
+            var log_json_arr = [];
+
+            if (back_no > 0) {
+                // console.log("log_modal 삭제:" + back_no);
+                cjo.splice(back_no, 10);
+            }
+
+            if (cjs && cjo) {
+                var len = cjo.length;
+                var last_no = len - 1;
+                var next_no = len + 1;
+                var last = cjo[last_no];
+                if (last.type == gjo.type) {
+                    if (tab_id && tab_id != last.tab_id) {
+                        last.tab_id = tab_id;
+                        cjo[last_no] = last;
+                    }
+                } else {
+                    cjo[next_no] = gjo;
+                }
+                log_json_arr = cjo.filter(Boolean);
+            } else {
+                log_json_arr[0] = gjo;
+            }
+            if (log_json_arr) {
+                var modal_log = JSON.stringify(log_json_arr);
+                set_cookie("modal_log", modal_log, 10000);
+            }
+            // console.log("log_modal:" + modal_log);
+        } else {
+            // console.log("log_modal:error");
+        }
+    }
+
+    function log_modal_reset() {
+        set_cookie("modal_log", "", 10000);
+        cjs = get_cookie('modal_log');
+        // console.log("모달리셋 : log_modal_reset:" + cjs);
+    }
+
+    function fnTeethAdd_new(obj) {
+        var url;
+        var params = obj;
+        var trigger = obj.trigger;
+        var act_button = obj.act_button;
+        params.crudMode = obj.crudmode;
+
+        // console.log(params);
+        switch (obj.type) {
+            case 'recommendation':
+                url = "consulting/item_form_re.php";
+                params.tab_id = "widget_re_list";
+                break;
+            case 'agree':
+                url = "consulting/item_form_ag.php";
+                params.tab_id = "widget_ag_list";
+                break;
+            case 'success':
+            case 'plan_success':
+                url = "widget/widget_tab_item_from_su.php";
+                break;
+            case 'cc':
+                url = "consulting/item_form_cc.php";
+                params.tab_id = "widget_cc_list";
+                break;
+            case 'next':
+                url = "consulting/item_form_next.php";
+                params.tab_id = "widget_next_list";
+                break;
+            case 'cure':
+            case 'cure_order':
+                url = "consulting/item_form_cure.php";
+                params.tab_id = "widget_cure_list";
+                params.trigger = "#tab_widget_cure_list";
+                break;
+            case 'cure_isq':
+            case 'cure_face':
+            case 'cure_implant':
+                url = "consulting/item_form_cure_step.php";
+                break;
+            case 'plan':
+            case 'plan_view':
+                url = "consulting/item_form_plan.php";
+                params.tab_id = "widget_plan_list";
+                break;
+        }
+        switch (params.crudMode) {
+            case 'D':
+            case 'AD':
+                if (!confirm('삭제 하시겠습니까?')) {
+                    return false;
+                }
+                url = "consulting/item_form_update.php";
+                break;
+            case 'AC':
+                switch (obj.type) {
+                    case 'success': // 전체완료
+                        if (!confirm('전체완료 하시겠습니까?')) {
+                            return false;
+                        }
+                        break;
+                    default:
+                        if (!confirm('전체 동의하시면 기존 동의내역은 삭제됩니다.')) {
+                            return false;
+                        }
+                        break;
+                }
+                url = "consulting/item_form_update.php";
+                break;
+            case 'ACI':
+                if (!confirm('보험만 동의 하시면 기존 동의내역은 삭제됩니다.')) {
+                    return false;
+                }
+                url = "consulting/item_form_update.php";
+                break;
+            case 'US':
+            case 'AUS':
+                if (!confirm("동의내역과 치료내역이 삭제 됩니다.\n정말 [" + act_button + "]로 설정 하시겠습니까?")) {
+                    return false;
+                }
+                url = "consulting/item_form_update.php";
+                break;
+            case 'AF':
+                if (!confirm("상담완료 하시면 상담예정인 항목은 보류로 변경됩니다.\n정말 [" + act_button + "]로 설정 하시겠습니까?")) {
+                    return false;
+                }
+                url = "consulting/item_form_update.php";
+                break;
+            default:
+                break;
+        }
+        // console.log(params);
+        // console.log(url);
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                var mc = $('#modalContentXl');
+                var mp = $('#modalPopupXl');
+                switch (params.crudMode) {
+                    case 'D':
+                    case 'US':
+                    case 'AUS':
+                    case 'AC':
+                    case 'AF':
+                    case 'ACI':
+                    case 'AD':
+                        // console.log(data);
+                        if (data == false) {
+                            alert(act_button + '오류.!')
+                            return false;
+                        } else {
+                            var triggers = [];
+                            trigger && (triggers = trigger.split(','));
+                            triggers && triggers.length && $.each(triggers, function(index, value) {
+                                $(triggers[index]) && $(triggers[index]).trigger("click");
+                            });
+                        };
+                        break;
+                    default:
+                        mc.attr("data-trigger", params.trigger);
+                        mc.attr("data-hiddenevent", params.hiddenevent);
+                        mc.html(data);
+                        mp.modal('show');
+                        break;
+                }
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    function fnTabView_new(get_tab_id, reset = '') {
+        var $this = $('#tabView'),
+            $form = [],
+            params;
+        $('.tab-content, .loading-container').addClass('sk-loading'); // 로딩삭제
+        $form = $('#searchform').serializeArray();
+        !reset && $form && $.each($form, function() {
+            params[this.name] = this.value;
+        });
+        $.ajax({
+            url: "./" + get_tab_id + ".php",
+            type: "POST",
+            cache: false,
+            dataType: "text",
+            data: params,
+            success: function(data) {
+                $this.html(data);
+                $this.parent(".loading-container").removeClass('sk-loading'); // 로딩삭제
+            },
+            error: function(request, status, error) {
+                var msg = "ERROR : " + request.status + "<br>"
+                msg += +"내용 : " + request.responseText + "<br>" + error;
+                // console.log(msg);
+            }
+        });
+    }
+    // 브라우저 알림통지 사용여부
+    Notification.requestPermission().then(function(result) {
+        if (result === 'denied') {
+            // console.log('알림설정');
+            return;
+        }
+        if (result === 'default') {
+            // console.log('기본');
+            return;
+        }
+        // console.log('알림동의')
+    });
+
+    function spawnNotification(theBody, theIcon, theTitle) {
+        var options = {
+            body: theBody,
+            icon: theIcon
+        }
+        var n = new Notification(theTitle, options);
+    }
+
+    // 회원 근태일정으로 달력 선택일 옵션체인지
+    function cfCalendarReserveDate(user_id, taget_obj) {
+        // console.log(user_id);
+        // console.log(taget_obj);
+        var params = {
+            user_id: user_id,
+            dentist_idx: '1'
+        };
+        $.ajax({
+            title: "",
+            url: "../user/ajax.get_user_work_week.php",
+            type: "POST",
+            data: params,
+            dataType: "json",
+            async: false,
+            cache: false,
+            success: function(data) {
+                // console.log(data);
+                // 특정요일 disabled 
+                if (data.off_week_key) {
+                    $(taget_obj).datepicker("setDaysOfWeekDisabled", data.off_week_key);
+                } else {
+                    $(taget_obj).datepicker("setDaysOfWeekDisabled", "");
+                }
+                // 특정일 disabled 
+                if (data.off_dates) {
+                    $(taget_obj).datepicker("setDatesDisabled", data.off_dates);
+                } else {
+                    $(taget_obj).datepicker("setDatesDisabled", "");
+                }
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // 콜센터 팝업사용여부
+    function callcenter_popup_switch() {
+        var check = $("#callcenter_popup_use_check").prop("checked");
+        if (check == true) {
+            set_callcenter_store_option("y");
+        } else {
+            set_callcenter_store_option("n");
+        }
+    }
+
+    function set_callcenter_store_option(check) {
+        var option = {
+            dentist_id: '1',
+            login_id: '',
+            call_check: check, // y, n
+        };
+        localStorage.setItem('denb_call_center_option', JSON.stringify(option));
+    }
+
+    function get_callcenter_store_option() {
+        var option = localStorage.getItem('denb_call_center_option');
+        if (option == null) {
+            set_callcenter_store_option('n');
+        }
+
+        var storeOption = JSON.parse(option);
+        //// console.log("dentist_id:"+storeOption.dentist_id);
+        //// console.log("login_id:"+storeOption.login_id);
+        //// console.log("call_check:"+storeOption.call_check);        
+        return storeOption;
+    }
+
+    var callcenter_intrval_handel = null;
+    var callcenter_alert_popup_auto = "n";
+    $(document).ready(function() {
+        callcenter_intrval_handel = setInterval(function() {
+            callcenter_start_callcenter_check();
+        }, 5000); // old:2000
+    });
+
+    // 팝업로그
+    function callcenter_set_queue_status(data) {
+        $.ajax({
+            url: 'call/callcenter_check.php',
+            type: "POST",
+            data: {
+                action: 'set_status',
+                idx: data.lg_centrex_call_log_idx
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data.status == "success") {
+                    // console.log("파업 수행완료후 파업로그기록");
+                }
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    // 콜센터 실시간 체크
+    function callcenter_start_callcenter_check() {
+        var receive_opt = get_callcenter_store_option();
+        // console.log(receive_opt);
+        // store check
+        if (receive_opt.call_check == 'y') {
+            $.ajax({
+                url: 'call/callcenter_check.php',
+                type: "POST",
+                data: {
+                    action: 'get_queue'
+                },
+                dataType: "json",
+                success: function(res) {
+                    if (res.status == "success") {
+                        if (res.data == "nodata") {
+                            ;
+                        } else {
+                            if (callcenter_alert_popup_auto == "n") {
+                                // console.log(res.data);
+                                // console.log("팝업뛰우기");
+                                let title = "";
+                                if (res.data.lg_centrex_call_log_idx > 0) {
+                                    // ARS센터 right bar open
+                                    $("#right-sidebar .right-latest-callcenter").trigger("click");
+                                    switch (res.data.status) {
+                                        case "BUSY":
+                                            title = res.data.title;
+                                            break;
+                                        default:
+                                            title = res.data.title;
+                                            break;
+                                    }
+                                    swal({
+                                            html: true,
+                                            title: title,
+                                            text: res.data.start_time + "\n 통화내역을 수행 하시려면 [확인]을 클릭하세요",
+                                            type: "warning",
+                                            confirmButtonText: "확인",
+                                            cancelButtonText: "취소",
+                                            showCancelButton: true,
+                                            closeOnConfirm: true,
+                                        },
+                                        function(isConfirm) {
+                                            swal.close();
+                                            if (isConfirm) {
+                                                callcenter_popupModal(res.data.lg_centrex_call_log_idx)
+                                                callcenter_alert_popup_auto = "y"; // 파업열림
+                                            } else {
+                                                callcenter_alert_popup_auto = "n"; // 파업열림
+                                            }
+                                            callcenter_set_queue_status(res.data); // 상태업로드
+                                        }
+                                    );
+                                }
+
+                            }
+                        }
+                    }
+                },
+                error: function(request, status, error) {
+                    // console.log("ajax Error : errorcallcenter_start_callcenter_check: code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error)
+                }
+            });
+        }
+    }
+
+    // 수신번호 파업창
+    function callcenter_popupModal(get_idx) {
+        var idx = get_idx;
+        var params = {
+            idx: idx,
+            crudMode: "U"
+        };
+        // console.log(params);
+        $.ajax({
+            url: 'call/callcenter_popup.php',
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalContentXl').attr("data-hiddenevent", "location.reload()");
+                $('#modalPopupXl').modal('show');
+            },
+            error: function(request, status, error) {
+                // console.log("ajax Error : callcenter_popupModal: code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error)
+            }
+        });
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // 환자문의 팝업사용여부
+    // 상담문의팝업알림
+    function requests_chk_auto_alert() {
+        var check = $("#input_requests_check").prop("checked");
+        if (check == true) {
+            set_requests_store_option("y");
+            swal({
+                html: true,
+                title: "신규 환자문의 팝업알림으로 설정 하였습니다.",
+                text: "",
+                type: "success",
+                timer: 10000,
+                closeOnConfirm: false,
+                confirmButtonText: "확인",
+                cancelButtonText: "취소",
+            });
+        } else {
+            set_requests_store_option("n");
+        }
+    }
+
+    function requests_popup_switch() {
+        var check = $("#requests_popup_use_check").prop("checked");
+        if (check == true) {
+            set_requests_store_option("y");
+        } else {
+            set_requests_store_option("n");
+        }
+    }
+
+    function set_requests_store_option(check) {
+        var option = {
+            dentist_id: '1',
+            login_id: '',
+            call_check: check, // y, n
+        };
+        localStorage.setItem('denb_requests_option', JSON.stringify(option));
+    }
+
+    function get_requests_store_option() {
+        var option = localStorage.getItem('denb_requests_option');
+        if (option == null) {
+            set_requests_store_option('n');
+        }
+        var storeOption = JSON.parse(option);
+        return storeOption;
+    }
+
+    var requests_intrval_handel = null;
+    var requests_alert_popup_auto = "n";
+    $(document).ready(function() {
+        var denb_requests_storage = get_storage("denb_requests_option")
+        if (denb_requests_storage.call_check == "y") {
+            $("#input_requests_check").prop("checked", true);
+        }
+        requests_intrval_handel = setInterval(function() {
+            requests_start_requests_check();
+        }, 2000);
+    });
+
+    // 팝업로그
+    function requests_set_queue_status(data) {
+        $.ajax({
+            url: 'call/requests_check.php',
+            type: "POST",
+            data: {
+                action: 'set_status',
+                idx: data.idx
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data.status == "success") {
+                    // console.log("파업 수행완료후 파업로그기록");
+                }
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    // 환자문의 실시간 체크
+    function requests_start_requests_check() {
+        var use_alert = $('.showSweetAlert').html();
+        if (use_alert) {
+            return false;
+        }
+        var receive_opt = get_requests_store_option();
+        if (receive_opt.call_check == 'y') {
+            $.ajax({
+                url: 'call/requests_check.php',
+                type: "POST",
+                data: {
+                    action: 'get_queue'
+                },
+                dataType: "json",
+                success: function(res) {
+                    if (res.status == "success") {
+                        if (res.data == "nodata") {
+                            ;
+                        } else {
+                            if (requests_alert_popup_auto == "n") {
+                                // console.log(res.data);
+                                // console.log("환자문의 팝업뛰우기");
+                                let title = "";
+                                if (res.data.idx > 0) {
+                                    voice_call("신규 환자문의가 있습니다."); // 음성출력
+                                    swal({
+                                            html: true,
+                                            title: "신규 환자문의<br> [" + res.data.patient_nm + " : " + res.data.cate + "]",
+                                            text: "문의내용:<br><h3>" + res.data.content + "</h3>",
+                                            type: "warning",
+                                            confirmButtonText: "환자문의 확인",
+                                            cancelButtonText: "확인취소",
+                                            showCancelButton: true,
+                                            closeOnConfirm: true,
+                                        },
+                                        function(isConfirm) {
+                                            swal.close();
+                                            if (isConfirm) {
+                                                requests_popupModal(res.data.idx)
+                                                requests_alert_popup_auto = "y"; // 파업열림
+                                            } else {
+                                                requests_alert_popup_auto = "n"; // 파업열림
+                                            }
+                                            requests_set_queue_status(res.data); // 상태업로드
+                                        }
+                                    );
+                                }
+
+                            }
+                        }
+                    }
+                },
+                error: function(request, status, error) {
+                    // console.log("ajax Error : errorrequests_start_requests_check: code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error)
+                }
+            });
+        }
+    }
+
+    // 수신번호 파업창
+    function requests_popupModal(get_idx) {
+        var idx = get_idx;
+        var params = {
+            idx: idx,
+            crudMode: "U"
+        };
+        // console.log(params);
+        $.ajax({
+            url: 'call/requests_form_pro.php',
+            type: "POST",
+            data: params,
+            dataType: "text",
+            success: function(data) {
+                $('#modalContentXl').html(data);
+                $('#modalContentXl').attr("data-hiddenevent", "location.reload()");
+                $('#modalPopupXl').modal('show');
+            },
+            error: function(request, status, error) {
+                // console.log("ajax Error : requests_popupModal: code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error)
+            }
+        });
+    }
+
+    // 수신번호 파업창
+    function voice_call(name) {
+        var audio = new Audio('../aws_voice/notify.wav');
+        audio.play();
+        if (name != 'undefined') {
+            voice.location.href = '../aws_voice/denb_voice.php?name=' + name;
+        }
+    }
+</script><script>
+    function form_up_modal(cate) {
+        return true;
+    }
+
+    function fsubmitModal() {
+        sweetLoding("저장 중입니다.", "잠시만 기다려 주세요.");
+        var form = $("#writeFormModal");
+        var params = new FormData(form[0]);
+        document.pressed && params.append('act_button', document.pressed);
+        console.log(params);
+        // 개인정보처리방침 동의 체크
+        var agree_yn = $('#agree_yn').is(':checked');
+        if (!agree_yn) {
+            fnAlert("개인정보 처리방침에\n동의하셔야 접수 하실 수 있습니다.");
+            return false;
+        };
+        $.ajax({
+            url: 'popup_requests_form_update.php',
+            type: "POST",
+            data: params,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: "json",
+            success: function(response) {
+                console.log(response);
+                switch (response.status) {
+                    case "y":
+                        location.href = "popup_requests_form_end.php?index_idx=" + response.data.index_idx;
+                        break;
+                    default:
+                        fnAlert(response.msg);
+                        break;
+                }
+            },
+            error: function(request, status, error) {
+                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+</script>

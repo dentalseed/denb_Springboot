@@ -1,0 +1,35 @@
+.noticejs {
+  font-family: $font-family;
+
+  .item {
+    margin: $item-margin;
+    border-radius: $border-radius;
+    overflow: hidden;
+    .close {
+      float: right;
+      font-size: 18px;
+      line-height: 1.47;
+      color: #fff;
+      text-shadow: 0 1px 0 #fff;
+        opacity: 1;
+        margin: 5px 7px;
+      &:hover{
+        opacity: .5;
+        color:rgb(0, 0, 0);
+      }
+    }
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px dashed #fff;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include noticejs-type('success');
+  @include noticejs-type('info');
+  @include noticejs-type('warning');
+  @include noticejs-type('error');
+}

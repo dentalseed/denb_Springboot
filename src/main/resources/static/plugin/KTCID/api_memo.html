@@ -1,0 +1,247 @@
+<HTML>
+<HEAD><TITLE> OPEN_API 통화메모</TITLE>
+<SCRIPT type="text/javascript" language="JavaScript" src="api_js.js"></script>
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventLogin(nResult)" LANGUAGE="Jscript">
+/**
+	로그인 관련 이벤트
+**/ 
+	if(nResult==200)
+	{
+		alert( "[Event] Login 성공" );		
+	}
+	else
+	{
+		alert( "[Event] Login 실패" );
+	}
+ 
+</SCRIPT>
+
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventConnect(nResult)" LANGUAGE="Jscript">
+/**
+	Connect 이벤트
+**/ 
+	var oDiv = document.all("DivConnect");
+	if(nResult==1){
+		oDiv.innerText="성공";
+	}else{
+		oDiv.innerText="실패";
+	}
+</SCRIPT>
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventChangePasswd( sPasswd )" LANGUAGE="Jscript">
+/**
+ 패스워드 변경 통지 이벤트
+**/
+alert( "패스워드 변경 : " + sPasswd );
+</SCRIPT>
+
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventSyncCallMemo( nMode, sCaller, sCallee, sCmType, sClSeqno, sCmSeqno, sCallName, sMemo, sCallGroup, sProgGroup, sIDate, sUDate)" LANGUAGE="Jscript">
+
+/**
+	통화 메모 통지 이벤트
+
+**/
+	var GetCallMemoCount ="";
+
+		GetCallMemoCount   =	"모드:"				+	nMode		+" "+
+					", 발신:"			+	sCaller		+" "+
+					", 수신:"			+	sCallee		+" "+
+					", 타입:"			+	sCmType		+" "+
+					", 내역일련번호:"	+	sClSeqno	+" "+
+					", 메모일련번호:"	+	sCmSeqno	+" "+
+					", 발신자이름:"		+	sCallName	+" "+
+					", 메모:"			+	sMemo		+" "+
+					", 그룹:"			+	sCallGroup	+" "+
+					", 진행상태:"		+	sProgGroup	+" "+
+					", 생성시간:"		+	sIDate		+" "+
+					", 수정시간:"		+	sUDate		+"\n";
+					
+			document.getElementById("GetCallMemoCount").value =GetCallMemoCount;
+</SCRIPT>
+
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventSyncAddressData( nMode, sAdType, sAdParentSeqno, sAdSeqno, sAdName, sAdMNumber, sAdONumber, sAdHNumber, sAdFNumber, sAdCompany, sAdTeam, sAdTitle, sAdBusiness, sAdZipCode, sAdAddress, sAdEmail, sAdMemo, sAdBirthDay, sAdBirthType, sNgName, sAdMetChance, sAdKeyman, sAdFavorite)" LANGUAGE="Jscript">
+
+/**
+ 주소록 사용자 통지 이벤트
+
+**/
+  var EventSyncAddressData = "";
+  EventSyncAddressData = 
+    "모드:"     + nMode   +" "+
+    
+    ", 주소:"    + sAdAddress  +" "+
+    ", 생년월일:"   + sAdBirthDay  +" "+
+    ", 음력0,양력1:"  + sAdBirthType +" "+
+    ", 담당업무:"   + sAdBusiness  +" "+
+    ", 회사이름:"   + sAdCompany  +" "+
+    ", 이메일주소:"   + sAdEmail  +" "+
+    ", 관심사:"    + sAdFavorite  +"\n"+
+    ", 팩스번호:"   + sAdFNumber  +" "+
+    ", 집전화번호:"   + sAdHNumber  +" "+
+    ", 추천인:"    + sAdKeyman  +" "+
+    ", 인물메모:"   + sAdMemo   +" "+
+    ", 만난상황:"   + sAdMetChance +" "+
+    ", 핸드폰번호:"   + sAdMNumber  +" "+
+    ", 이름:"    + sAdName   +" "+
+    ", 회사전화번호:"  + sAdONumber  +"\n"+
+    ", 상위그룹일련번호:" + sAdParentSeqno +" "+
+    ", 주소록일련번호:"  + sAdSeqno  +" "+
+    ", 부서:"    + sAdTeam   +" "+
+    ", 직책:"    + sAdTitle  +" "+
+    ", 그룹타입:"   + sAdType   +" "+
+    ", 우편번호:"   + sAdZipCode  +" "+
+    ", 인맥:"    + sNgName   +"\n\n";
+
+document.getElementById("EventSyncAddressData").value =EventSyncAddressData;
+
+
+</SCRIPT>
+
+<SCRIPT FOR="KTOpenAPIX" EVENT="EventAddinCall( nSelectType, sAddinType, nCount)" LANGUAGE="Jscript">
+
+/**
+	브라우져 콜 이벤트
+
+**/
+	var EventAddinCall = "";
+
+		EventAddinCall =	"선택한메뉴타입:"		+	nMode			+" "+
+				", 사용한프로그램:"		+	sAgName			+" "+
+				", 전화번호 수:"		+	sAgParentSeqno	+"\n";
+	
+		document.getElementById("EventAddinCall").value =EventAddinCall;
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<OBJECT ID="KTOpenAPIX" CLASSID="CLSID:16AB1B2A-A22E-4FAC-92CB-84102DF5CE3D"></OBJECT>
+	<table border="1" width ="1450px">
+		<tr>
+			<td>접속확인</td>
+		</tr>
+		<tr>
+			<td><div id="DivConnect">&nbsp;</div></td>  
+		</tr>
+		<tr>
+			<td>
+				<table border="1" style="float:left"  >
+					<tr>
+						<td >로그인 </td>
+						<td><input type ="button" value ="강제로그아웃" onclick ="LoginKickOut()"></td>
+					</tr>
+					<tr>
+						<td width="70">서버</td>
+						<td>
+							<select Name="server" >
+							<option value="0" >개발용</option>
+							<option value="1">상용</option>
+							</select>
+							<input type="button" value="회선청약" onclick="LineJoin()">
+						</td>
+					</tr>
+					<tr>
+						<td>인증키</td>
+						<td> <Input Type = "Text" Name = "authkey"value = "인증키 입력"  onclick = "keyclear()"></td>
+					</tr>
+					<tr>
+						<td>아이디</td>
+						<td><Input Type = "Text" Name = "loginID"value = "아이디 입력" onclick = "idclear()"></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><Input Type = "password" Name = "loginPWD"value = "비밀번호" onclick = "passclear()"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+						<input type="button" value='로그인' onClick="Login()"> 
+						<input type="button" value='로그아웃' onClick="Logout()">
+						<input type="button" value='도움말' onClick="HelpEX()">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+						<input type="button" value='회원가입' onClick="UserJoinEX()">
+						<input type="button" value='비밀번호 찾기' onClick="FindPasswdEX()">
+						</td>
+					</tr>
+				</table>
+				<table border ="1px" style="float:left">
+					<tr>
+						<td>전화번호 세팅</td>
+					</tr>
+					<tr>
+						<td><input type = "text" name ="sRecvPhone" ></td>
+					</tr>
+					<tr>
+						<td>
+							<input type = "button" value="전화번호 세팅" onclick="SetRecvPhone()">
+							<input type = "button" value="가져오기" onclick="GetRecvPhone()">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type = "button" value="전화번호 삭제" onclick="RemoveRecvPhone()">
+							<input type = "button" value="전체삭제" onclick="RemoveAllRecvPhone()">
+						</td>
+					</tr>
+					<tr>
+						<td><textarea id="RecvPhonelist" cols ="30" rows = "5"></textarea></td>
+					</tr>	
+				</table>
+				<table border = "1px">
+					<tr>
+						<td>주소록 사용자 통지</td>
+					</tr>
+					<tr>
+						<td><textarea id="EventSyncAddressData" style="width:900px" rows = "4"></textarea></td>
+					</tr>
+					<tr>
+					<td>브라우져 콜</td></tr>
+					<tr><td><textarea id="EventSyncAddressData" style="width:900px" rows = "4"></textarea></td></tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+
+				<table border = "1px">
+					<tr>
+						<td>통화메모</td>
+					</tr>
+					<tr>
+						<td>
+							<select name ="cCmType">
+							<option value ="1">개인메모</option>
+							<option value ="2">공유메모</option>
+							</select>
+							<input type = "button" value = "통화메모 수" onclick="GetCallMemoCount()">
+							통화메모 시작번호 : <input type ="text" name ="MemonStart" size = "3" value="0">
+							가져올메모내역수 : <input type ="text" name ="MemonCount" size = "3" value="20">
+							<input type = "button" value="통화메모 리스트" onclick="GetCallMemoList()">
+							통화메모 일련번호 : <input type ="text" name ="MemosDBID" size = "5">
+							<input type = "button" value = "통화메모" onclick="GetCallMemo()"><br>
+							통화내역일련번호 : <input type = "text" name ="sCLDBID" size = "5"> 
+							발신자 이름 : <input type = "text" name ="sCallName" size = "15" value="홍길동">
+							그룹이름 : <input type = "text" name ="sCallGroup" size = "15" value="그룹1"> 
+							진행상태 : <input type = "text" name ="sProgGroup" size = "10" value="진행"> 
+							메모 : <input type = "text" name ="sMemo" size = "20" value="테스트 입니다."><br>
+							<input type = "button" value="메모 추가" onclick="NewCallMemo()">
+							<input type = "button" value="메모 수정" onclick="EditCallMemo()">
+							<input type = "button" value = "메모 삭제" onclick="DelCallMemo()">
+						</td>
+					</tr>
+					<tr>
+						<td>	<textarea id="GetCallMemoCount" cols ="200" rows= "10"></textarea></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</BODY>
+</HTML>
+

@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  web01: 
+  denb_boot-web01: 
     container_name: denb_boot
     hostname: denb_boot
     ports:

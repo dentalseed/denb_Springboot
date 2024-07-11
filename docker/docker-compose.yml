@@ -7,7 +7,7 @@ services:
     container_name: denb_boot
     hostname: denb_boot
     ports:
-      - "9004:8080"
+      - "9904:8080"
     env_file:
       - ./denb_boot/config/.env.dev
     build:

@@ -5,7 +5,7 @@ services:
     container_name: denb_boot
     hostname: denb_boot
     ports:
-      - "9003:8080"
+      - "9004:8080"
     build:
       context: ./
     deploy:

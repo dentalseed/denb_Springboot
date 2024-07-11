@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  web:
+  web: 
     container_name: denb_boot
     hostname: denb_boot
     ports:
@@ -13,8 +13,6 @@ services:
       replicas: 1
     networks:
       - web
-
-
 networks: # 가장 기본적인 bridge 네트워크.
   web:
     driver: bridge

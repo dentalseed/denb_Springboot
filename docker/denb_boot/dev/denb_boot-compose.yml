@@ -1,11 +1,11 @@
 version: "3"
 
 services:
-  web01:
+  web01: 
     container_name: denb_boot
     hostname: denb_boot
     ports:
-      - "9003:8080"
+      - "9004:8080"
     build:
       context: ..
     env_file:
@@ -15,6 +15,7 @@ services:
       replicas: 1
     networks:
       - docker_network
+
 
 networks: # 가장 기본적인 bridge 네트워크 test 입니다
   docker_network:

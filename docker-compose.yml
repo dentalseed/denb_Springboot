@@ -1,11 +1,11 @@
 version: "3"
 
 services:
-  denb_boot-web01: 
+  web: 
     container_name: denb_boot
     hostname: denb_boot
     ports:
-      - "9003:8080"
+      - "9998:8080"
     build:
       context: ./
     deploy:

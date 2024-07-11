@@ -28,8 +28,8 @@ repositories {
     }
 }
 bootWar {
-    archiveBaseName = 'egov'
-    archiveFileName = 'egov.war'
+    archiveBaseName = 'denb_boot'
+    archiveFileName = 'denb_boot.war'
     archiveVersion = '1.0.0'
 }
  

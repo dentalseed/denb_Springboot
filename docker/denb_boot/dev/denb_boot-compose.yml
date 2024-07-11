@@ -2,8 +2,8 @@ version: "3"
 
 services:
   web01:
-    container_name: ego_web
-    hostname: ego_web
+    container_name: denb_boot
+    hostname: denb_boot
     ports:
       - "9004:8080"
     build:

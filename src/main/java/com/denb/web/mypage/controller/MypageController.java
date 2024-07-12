@@ -15,9 +15,10 @@ public class MypageController {
 	
 	private final MypageService mypageService;
 
-    @GetMapping("/mypage.do")
+	
+	//Main Mypage.
+    @GetMapping("/index.do")
     public String home(Model model) {
-
     	String token = "8GJlBfGGPITf0_bXfWMWTgQ_c_c";
     	MypageTokenDto mypageTokenDto = mypageService.findToken(token);
     	
@@ -35,8 +36,35 @@ public class MypageController {
             e.printStackTrace();
             return "올바르지 않은 토큰 값입니다.(java): " + e.getMessage();
 		}
-    	 
-        return "mypage/patient_mypage3";
+        return "mypage/patient_mypage3.html";
+    }
+    
+    //예약신청
+    @GetMapping("/reserve.do")
+    public String reserve(Model model) {
+        return "mypage/patient_mypage_reserve_form_self.html";
+    }
+    //접수이력
+    @GetMapping("/mypagecure.do")
+    public String mypagecure(Model model) {
+        return "mypage/patient_mypage_cure.html";
     }
    
+    //후기작성
+    @GetMapping("/contact.do")
+    public String contact(Model model) {
+        return "mypage/patient_mypage_contact.html";
+    }
+    //내 상담현황
+    @GetMapping("/consulting.do")
+    public String consulting(Model model) {
+        return "mypage/patient_mypage_consulting.html";
+    }
+    //마이비서
+    @GetMapping("/secretary.do")
+    public String secretary(Model model) {
+        return "mypage/patient_mypage_secretary.html";
+    }
+
+    
 }

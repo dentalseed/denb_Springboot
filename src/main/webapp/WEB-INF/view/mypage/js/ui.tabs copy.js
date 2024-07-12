@@ -1,1 +1,0 @@
-d:\phpstudy_pro\WWW\denb\js\ui.tabs copy.js
